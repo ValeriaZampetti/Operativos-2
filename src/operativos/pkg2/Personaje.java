@@ -10,20 +10,16 @@ package operativos.pkg2;
  */
 public class Personaje {
     
-    private PuntosPersonajes puntos_Habilidades;
-    private PuntosPersonajes puntos_Vida;
-    private PuntosPersonajes puntos_Fuerza;
-    private PuntosPersonajes puntos_Agilidad;
+    public int puntos_Habilidades;
+    public int puntos_Vida;
+    public int puntos_Fuerza;
+    public int puntos_Agilidad;
 
-    public Personaje(int puntos_Habilidades, int puntos_Vida, int puntos_Fuerza, int puntos_Agilidad) {
-        this.puntos_Habilidades = new PuntosPersonajes(puntos_Habilidades,60);
-        this.puntos_Vida =  new PuntosPersonajes(puntos_Vida,70) ;
-        this.puntos_Fuerza = new PuntosPersonajes(puntos_Fuerza,50);
-        this.puntos_Agilidad = new PuntosPersonajes(puntos_Agilidad, 40);
-    }
-    
-    
-   
-    
-    
+    public Personaje(int puntos_Habilidades, int puntos_Vida, int puntos_Fuerza, 
+            int puntos_Agilidad) {
+        this.puntos_Habilidades =  puntos_Habilidades;
+        this.puntos_Vida = puntos_Vida;
+        this.puntos_Fuerza = puntos_Fuerza;
+        this.puntos_Agilidad = puntos_Agilidad;
+    }  
 }
