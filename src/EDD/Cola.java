@@ -7,10 +7,12 @@ package EDD;
 /**
  *
  * @author valeriazampetti
+ * @param <T> Type of the Nodo object
  */
-public class Cola {
-     private Nodo pInicio;
-    private Nodo pFinal;
+public class Cola<T> {
+
+    private Nodo<T> pInicio;
+    private Nodo<T> pFinal;
     private int Size;
 
     /**
@@ -54,55 +56,53 @@ public class Cola {
     public void setSize(int Size) {
         this.Size = Size;
     }
-    
-    public boolean EsVacio(){
+
+    public boolean EsVacio() {
         return pInicio == null;
     }
-    
-    
-    public void Encolar(Object dato){
+
+    public void Encolar(T dato) {
         Nodo nuevo = new Nodo(dato);
-        if(EsVacio()){
+        if (EsVacio()) {
             pInicio = pFinal = nuevo;
-        }else{
-            
+        } else {
+
             Nodo aux = pFinal;
             aux.setSiguiente(nuevo);
-           
-           
-        }pFinal = nuevo;
-        Size ++;
+
+        }
+        pFinal = nuevo;
+        Size++;
     }
-    
-    public void Desencolar(){
-        if(!EsVacio()){
+
+    public void Desencolar() {
+        if (!EsVacio()) {
             pInicio = pInicio.getSiguiente();
-            if(pInicio == null) {
+            if (pInicio == null) {
                 pFinal = null;
             }
         }
-        Size --;
+        Size--;
     }
-    
-    public String Imprimir(){
+
+    public String Imprimir() {
         if (!EsVacio()) {
-            String printQueue= "";
+            String printQueue = "";
             for (int i = 0; i < Size; i++) {
-                Nodo actual= pInicio;
+                var actual = pInicio;
                 Desencolar();
                 printQueue += actual.getElemento() + "\n";
                 Encolar(actual.getElemento());
-                
-                
+
             }
             System.out.println(printQueue);
-            
+
         }
         return null;
     }
-    
-    public Object LeerCabeza(){
+
+    public T LeerCabeza() {
         return pInicio.getElemento();
     }
-    
+
 }

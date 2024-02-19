@@ -7,12 +7,14 @@ package EDD;
 /**
  *
  * @author valeriazampetti
+ * @param <T> Type of the object
  */
-public class Nodo {
-     private Object elemento;
+public class Nodo<T> {
+
+    private T elemento;
     private Nodo siguiente;
 
-    public Nodo(Object elemento) {
+    public Nodo(T elemento) {
         this.elemento = elemento;
         this.siguiente = null;
     }
@@ -20,14 +22,14 @@ public class Nodo {
     /**
      * @return the elemento
      */
-    public Object getElemento() {
+    public T getElemento() {
         return elemento;
     }
 
     /**
      * @param elemento the elemento to set
      */
-    public void setElemento(Object elemento) {
+    public void setElemento(T elemento) {
         this.elemento = elemento;
     }
 
@@ -44,8 +46,5 @@ public class Nodo {
     public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
     }
-    
-    
-    
-    
+
 }
