@@ -10,14 +10,14 @@ package operativos.pkg2;
  */
 public class PersonajeJugable {
 
-    private PuntosPersonajes puntos_Habilidades;
-    private PuntosPersonajes puntos_Vida;
-    private PuntosPersonajes puntos_Fuerza;
-    private PuntosPersonajes puntos_Agilidad;
+    private final PuntosPersonajes puntos_Habilidades;
+    private final PuntosPersonajes puntos_Vida;
+    private final PuntosPersonajes puntos_Fuerza;
+    private final PuntosPersonajes puntos_Agilidad;
 
     private int id;
-    private Prioridad rareza;
-    private Personaje personaje;
+    private final Prioridad rareza;
+    private final Personaje personaje;
 
     public PersonajeJugable(Personaje personaje) {
         this.personaje = personaje;
@@ -34,10 +34,10 @@ public class PersonajeJugable {
     private Prioridad decidirRareza() {
         var contadorCalidad = 0;
 
-        contadorCalidad += this.puntos_Habilidades.calidad ? 1 : 0;
-        contadorCalidad += this.puntos_Vida.calidad ? 1 : 0;
-        contadorCalidad += this.puntos_Fuerza.calidad ? 1 : 0;
-        contadorCalidad += this.puntos_Agilidad.calidad ? 1 : 0;
+        contadorCalidad += this.puntos_Habilidades.esCalidad() ? 1 : 0;
+        contadorCalidad += this.puntos_Vida.esCalidad() ? 1 : 0;
+        contadorCalidad += this.puntos_Fuerza.esCalidad() ? 1 : 0;
+        contadorCalidad += this.puntos_Agilidad.esCalidad() ? 1 : 0;
 
         if (contadorCalidad == 4) {
             return Prioridad.ALTA;
@@ -46,6 +46,14 @@ public class PersonajeJugable {
         } else {
             return Prioridad.BAJA;
         }
+    }
+
+    public Prioridad getRareza() {
+        return rareza;
+    }
+
+    public Personaje getPersonaje() {
+        return personaje;
     }
 }
 

@@ -4,20 +4,31 @@
  */
 package operativos.pkg2;
 
+import Utils.Funciones;
+
 /**
  *
  * @author valeriazampetti
  */
 public class PuntosPersonajes {
-    
-    private int habilidad_Valor;
-    public boolean calidad;
 
-    public PuntosPersonajes(int habilidad_Valor) {
+    private int habilidad_Valor;
+    private boolean calidad;
+
+    public PuntosPersonajes(int habilidad_Valor, int probabilidad) {
         this.habilidad_Valor = habilidad_Valor;
-        this.calidad = false;
+        this.calidad = this.determinarCalidad(probabilidad);
     }
-    
-    
-    
+
+    private boolean determinarCalidad(int probabilidad) {
+        return Funciones.get_Random(0, 100) <= probabilidad;
+    }
+
+    public int getHabilidad_Valor() {
+        return habilidad_Valor;
+    }
+
+    public boolean esCalidad() {
+        return calidad;
+    }
 }
