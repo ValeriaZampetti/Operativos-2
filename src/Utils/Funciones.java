@@ -24,4 +24,16 @@ public class Funciones {
         return random <= probability;
     }
 
+    public static int try_MultipleProbabilities(int[] probabilities) {
+        int sum = 0;
+        int randNum = get_Random(0, 100);
+        for (int i = 0; i < probabilities.length; i++) {
+            sum += probabilities[i];
+            if (randNum < sum) {
+                return i;
+            }
+        }
+        throw new IllegalArgumentException("Probabilities do not sum to 100");
+    }
+
 }
