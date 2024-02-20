@@ -4,6 +4,7 @@
  */
 package Personajes;
 
+import EDD.Colas_Show;
 import Personajes.Personaje;
 import Enums.Prioridad;
 import operativos.pkg2.PuntosPersonajes;
@@ -19,12 +20,13 @@ public class PersonajeJugable {
     private final PuntosPersonajes puntos_Fuerza;
     private final PuntosPersonajes puntos_Agilidad;
 
-    private int id;
+    private final String id; //Deberia ser algo como AVATAR-2
     private int contador = 0;
+
     private final Prioridad rareza;
     private final Personaje personaje;
 
-    public PersonajeJugable(Personaje personaje) {
+    public PersonajeJugable(Personaje personaje, String id) {
         this.personaje = personaje;
 
         this.puntos_Habilidades = new PuntosPersonajes(personaje.puntos_Habilidades, 60);
@@ -33,7 +35,7 @@ public class PersonajeJugable {
         this.puntos_Agilidad = new PuntosPersonajes(personaje.puntos_Agilidad, 40);
 
         this.rareza = this.decidirRareza();
-
+        this.id = id;
     }
 
     private Prioridad decidirRareza() {
@@ -53,6 +55,11 @@ public class PersonajeJugable {
         }
     }
 
+    public boolean pertenece_A_Cola(Colas_Show colas) {
+//        TODO operacion utilizando el id para determianr acual cola pertence
+        return true;
+    }
+
     public Prioridad getRareza() {
         return rareza;
     }
@@ -67,6 +74,7 @@ public class PersonajeJugable {
 
     /**
      * Decrements 1 and check if was reseted
+     *
      * @return true if reseted, false otherwise
      */
     public boolean decrementarContador() {
