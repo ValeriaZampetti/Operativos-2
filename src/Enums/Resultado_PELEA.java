@@ -8,6 +8,6 @@ package Enums;
  *
  * @author Sergionx
  */
-public enum Resultado_PELEA {
+public enum Resultado_Pelea {
     VICTORIA, EMPATE, INCAPAZ
 }
