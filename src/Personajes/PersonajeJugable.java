@@ -20,6 +20,7 @@ public class PersonajeJugable {
     private final PuntosPersonajes puntos_Agilidad;
 
     private int id;
+    private int contador = 0;
     private final Prioridad rareza;
     private final Personaje personaje;
 
@@ -59,5 +60,24 @@ public class PersonajeJugable {
     public Personaje getPersonaje() {
         return personaje;
     }
-}
 
+    public int getContador() {
+        return contador;
+    }
+
+    /**
+     * Decrements 1 and check if was reseted
+     * @return true if reseted, false otherwise
+     */
+    public boolean decrementarContador() {
+//        REVIEW - Si es prioridad alta, no hace nada, ver que hago
+        this.contador -= 1;
+
+        if (contador == 8) {
+            contador = 0;
+            return true;
+        }
+        return false;
+    }
+
+}
