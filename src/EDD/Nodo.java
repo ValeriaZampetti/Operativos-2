@@ -26,13 +26,7 @@ public class Nodo<T> {
         return elemento;
     }
 
-    /**
-     * @param elemento the elemento to set
-     */
-    public void setElemento(T elemento) {
-        this.elemento = elemento;
-    }
-
+   
     /**
      * @return the siguiente
      */

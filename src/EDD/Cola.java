@@ -23,13 +23,6 @@ public class Cola<T> {
     }
 
     /**
-     * @param pInicio the pInicio to set
-     */
-    public void setpInicio(Nodo pInicio) {
-        this.pInicio = pInicio;
-    }
-
-    /**
      * @return the pFinal
      */
     public Nodo getpFinal() {
@@ -37,24 +30,10 @@ public class Cola<T> {
     }
 
     /**
-     * @param pFinal the pFinal to set
-     */
-    public void setpFinal(Nodo pFinal) {
-        this.pFinal = pFinal;
-    }
-
-    /**
      * @return the Size
      */
     public int getSize() {
         return Size;
-    }
-
-    /**
-     * @param Size the Size to set
-     */
-    public void setSize(int Size) {
-        this.Size = Size;
     }
 
     public boolean EsVacio() {
@@ -66,23 +45,24 @@ public class Cola<T> {
         if (EsVacio()) {
             pInicio = pFinal = nuevo;
         } else {
-
             Nodo aux = pFinal;
             aux.setSiguiente(nuevo);
-
         }
         pFinal = nuevo;
         Size++;
     }
 
-    public void Desencolar() {
-        if (!EsVacio()) {
-            pInicio = pInicio.getSiguiente();
-            if (pInicio == null) {
-                pFinal = null;
-            }
+    public T Desencolar() {
+        if (EsVacio()) {
+            return null;
+        }
+        Nodo<T> result = pInicio;
+        pInicio = pInicio.getSiguiente();
+        if (pInicio == null) {
+            pFinal = null;
         }
         Size--;
+        return result.getElemento();
     }
 
     public String Imprimir() {
