@@ -11,11 +11,17 @@ import java.util.Random;
  * @author valeriazampetti
  */
 public class Funciones {
-    
-    public static int get_Random(int min, int max){
+
+    public static int get_Random(int min, int max) {
         var rand = new Random();
         return rand.nextInt(max + 1 - min) + min;
-        
+
     }
-            
+
+    public static boolean try_Probability(int probability) {
+        var random = get_Random(0, 100);
+
+        return random <= probability;
+    }
+
 }

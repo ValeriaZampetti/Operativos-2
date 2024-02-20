@@ -17,11 +17,7 @@ public class PuntosPersonajes {
 
     public PuntosPersonajes(int habilidad_Valor, int probabilidad) {
         this.habilidad_Valor = habilidad_Valor;
-        this.calidad = this.determinarCalidad(probabilidad);
-    }
-
-    private boolean determinarCalidad(int probabilidad) {
-        return Funciones.get_Random(0, 100) <= probabilidad;
+        this.calidad = Funciones.try_Probability(probabilidad);
     }
 
     public int getHabilidad_Valor() {
