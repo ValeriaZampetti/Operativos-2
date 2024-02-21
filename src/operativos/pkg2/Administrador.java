@@ -6,6 +6,7 @@ package operativos.pkg2;
 
 import EDD.Colas_Show;
 import Enums.Resultado_Pelea;
+import Personajes.PersonajeJugable;
 import Utils.Funciones;
 import java.util.Random;
 
@@ -44,62 +45,33 @@ public final class Administrador {
         var personaje_Show2 = show2.escoger_Personaje_Pelear();
 
         Data_Pelea data_Pelea = IA.procesarPersonjaes(personaje_Show1, personaje_Show2);
-        this.procesarResultados(data_Pelea);
+        this.procesarResultados(data_Pelea, personaje_Show1, personaje_Show2);
 
         if (actualizarCiclo()) {
             var debeAgregar = Funciones.try_Probability(80);
 
             if (debeAgregar) {
-                agregarPersonajes();
+                show1.crear_Personaje();
+                show2.crear_Personaje();
             }
         }
     }
 
-    private void procesarResultados(Data_Pelea data_Pelea) {
+    private void procesarResultados(Data_Pelea data_Pelea, 
+            PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
         var ganador = data_Pelea.getGanador();
         var colas_Show_1 = show1.getCola_Show();        
         var colas_Show2_2= show2.getCola_Show();
 
         if (ganador.pertenece_A_Cola(colas_Show_1)) {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
-            colas_Show2_2.decidir_Accion_Pelea(data_Pelea.getResultado(), null);
+            colas_Show2_2.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show2);
         } else {
-            colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), null);
+            colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show1);
             colas_Show2_2.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
         }
     }
     
-    
-    
-    private void crearPersonaje(){
-        
-        
-        
-        
-        
-        
-        
-       
-        
-        
-        
-        
-    }
-    
-    private void agregarPersonajes() {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    }
-
     /**
      * Updates the ciclo and ciclosTotales property
      *
