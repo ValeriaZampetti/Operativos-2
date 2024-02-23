@@ -72,6 +72,9 @@ public final class Administrador {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show1);
             colas_Show_2.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
         }
+        
+        colas_Show_1.actualizarContadores();
+        colas_Show_2.actualizarContadores();
     }
 
 }
