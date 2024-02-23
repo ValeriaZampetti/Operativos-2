@@ -4,10 +4,10 @@
  */
 package Personajes;
 
-import EDD.Colas_Show;
 import Personajes.Personaje;
 import Enums.Prioridad;
-import operativos.pkg2.PuntosPersonajes;
+import Utils.Contador;
+import operativos.pkg2.Show;
 
 /**
  *
@@ -21,13 +21,14 @@ public class PersonajeJugable {
     private final PuntosPersonajes puntos_Agilidad;
 
     private final String id; //Deberia ser algo como AVATAR-2
-    private int contador = 0;
+    private Contador contador;
 
     private final Prioridad rareza;
     private final Personaje personaje;
 
     public PersonajeJugable(Personaje personaje, String id) {
         this.personaje = personaje;
+        this.contador = new Contador(8);
 
         this.puntos_Habilidades = new PuntosPersonajes(personaje.puntos_Habilidades, 60);
         this.puntos_Vida = new PuntosPersonajes(personaje.puntos_Vida, 70);
@@ -55,9 +56,11 @@ public class PersonajeJugable {
         }
     }
 
-    public boolean pertenece_A_Cola(Colas_Show colas) {
-//        TODO operacion utilizando el id para determianr acual cola pertence
-        return true;
+    public boolean pertenece_A_Show(Show show) {
+        var idParts = this.id.split("-");
+        var showIdPart = idParts[0];
+
+        return showIdPart == id;
     }
 
     public Prioridad getRareza() {
@@ -67,25 +70,4 @@ public class PersonajeJugable {
     public Personaje getPersonaje() {
         return personaje;
     }
-
-    public int getContador() {
-        return contador;
-    }
-
-    /**
-     * Decrements 1 and check if was reseted
-     *
-     * @return true if reseted, false otherwise
-     */
-    public boolean decrementarContador() {
-//        REVIEW - Si es prioridad alta, no hace nada, ver que hago
-        this.contador -= 1;
-
-        if (contador == 8) {
-            contador = 0;
-            return true;
-        }
-        return false;
-    }
-
 }
