@@ -21,15 +21,12 @@ public class Colas_Show {
     
     private final Cola<PersonajeJugable> cola_Refuerzo;
     
-    private final String showId; //Debería verse como AVATAR
 
-    public Colas_Show(String showId) {
+    public Colas_Show() {
         this.cola_Alta = new Cola();
         this.cola_Media = new Cola();
         this.cola_Baja = new Cola();
         this.cola_Refuerzo = new Cola();
-        
-        this.showId = showId;
     }
     
     public PersonajeJugable escojerPersonaje() {
