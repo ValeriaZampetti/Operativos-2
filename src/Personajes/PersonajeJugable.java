@@ -21,7 +21,7 @@ public class PersonajeJugable {
     private final PuntosPersonajes puntos_Agilidad;
 
     private final String id; //Deberia ser algo como AVATAR-2
-    private Contador contador;
+    public Contador contador;
 
     private final Prioridad rareza;
     private final Personaje personaje;
