@@ -63,7 +63,7 @@ public final class Administrador {
         var colas_Show_1 = show1.getCola_Show();        
         var colas_Show2_2= show2.getCola_Show();
 
-        if (ganador.pertenece_A_Cola(colas_Show_1)) {
+        if (ganador.pertenece_A_Show(show1)) {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
             colas_Show2_2.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show2);
         } else {
