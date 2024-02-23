@@ -7,6 +7,7 @@ package operativos.pkg2;
 import EDD.Colas_Show;
 import Personajes.Personaje;
 import Personajes.PersonajeJugable;
+import Utils.Contador;
 import Utils.Funciones;
 
 /**
@@ -17,11 +18,15 @@ public class Show {
 
     public Personaje personajes[];
     private final Colas_Show cola_Show;
-    private int Contador_Personaje;
+    private Contador contador;
+    
+    public final String id; //Debería verse como AVATAR
 
-    public Show(Personaje[] personajes, Colas_Show cola_Show) {
+    public Show(String id, Personaje[] personajes, Colas_Show cola_Show) {
         this.personajes = personajes;
         this.cola_Show = cola_Show;
+        
+        this.id = id;
     }
 
     public PersonajeJugable escoger_Personaje_Pelear() {
@@ -37,14 +42,16 @@ public class Show {
         return cola_Show;
     }
 
-    public String crear_Id() {
-
-        return "";
+    public String crear_PersonajeId() {
+        var num_Personaje = contador.getActual();
+        contador.incrementarContador();
+        
+        return id + "-" + num_Personaje;
     }
 
     public void crear_Personaje() {
         var personaje = escoger_Personaje_Aleatorio();
-        var id = crear_Id();
+        var id = crear_PersonajeId();
 
         var persona_Jugable = new PersonajeJugable(personaje, id);
 
