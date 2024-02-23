@@ -7,6 +7,7 @@ package operativos.pkg2;
 import EDD.Colas_Show;
 import Enums.Resultado_Pelea;
 import Personajes.PersonajeJugable;
+import Utils.Contador;
 import Utils.Funciones;
 import java.util.Random;
 
@@ -16,11 +17,10 @@ import java.util.Random;
  */
 public final class Administrador {
 
-    private int ciclosTotales = 0;
-    private int ciclo = 0;
     private Show show1;
     private Show show2;
-    
+
+    private Contador contador;
 
     private final Inteligencia_Artificial IA;
 
@@ -30,6 +30,8 @@ public final class Administrador {
         this.show1 = show1;
         this.show2 = show2;
         this.IA = Inteligencia_Artificial.getInstance();
+
+        this.contador = new Contador(2);
     }
 
 //    REVIEW - Considerar si debe ser un singleton o no
@@ -47,7 +49,7 @@ public final class Administrador {
         Data_Pelea data_Pelea = IA.procesarPersonjaes(personaje_Show1, personaje_Show2);
         this.procesarResultados(data_Pelea, personaje_Show1, personaje_Show2);
 
-        if (actualizarCiclo()) {
+        if (contador.incrementarContador()) {
             var debeAgregar = Funciones.try_Probability(80);
 
             if (debeAgregar) {
@@ -57,33 +59,19 @@ public final class Administrador {
         }
     }
 
-    private void procesarResultados(Data_Pelea data_Pelea, 
+    private void procesarResultados(Data_Pelea data_Pelea,
             PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
         var ganador = data_Pelea.getGanador();
-        var colas_Show_1 = show1.getCola_Show();        
-        var colas_Show2_2= show2.getCola_Show();
+        var colas_Show_1 = show1.getCola_Show();
+        var colas_Show_2 = show2.getCola_Show();
 
         if (ganador.pertenece_A_Show(show1)) {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
-            colas_Show2_2.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show2);
+            colas_Show_2.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show2);
         } else {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show1);
-            colas_Show2_2.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
+            colas_Show_2.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
         }
     }
-    
-    /**
-     * Updates the ciclo and ciclosTotales property
-     *
-     * @return true if ciclo was resetd, false otherwise
-     */
-    private boolean actualizarCiclo() {
-        ciclo++;
-        if (ciclo == 2) {
-            ciclo = 0;
-            ciclosTotales++;
-            return true;
-        }
-        return false;
-    }
+
 }
