@@ -7,7 +7,6 @@ package EDD;
 import Enums.Resultado_Pelea;
 import Personajes.PersonajeJugable;
 import Utils.Funciones;
-import operativos.pkg2.Data_Pelea;
 
 /**
  *
@@ -80,15 +79,27 @@ public class Colas_Show {
         incrementarContadores_PorCola(cola_Alta);
         incrementarContadores_PorCola(cola_Media);
         incrementarContadores_PorCola(cola_Baja);
-        incrementarContadores_PorCola(cola_Refuerzo);
 
     }
 
-    public void incrementarContadores_PorCola(Cola<PersonajeJugable> cola) {
+    private void incrementarContadores_PorCola(Cola<PersonajeJugable> cola) {
 //        TODO - Recorrer y hacer personaje.contador.incrementarContador() a TODOS
 
     }
 
-    public void actualizarContadores() {
+    private void promocionarJugador(PersonajeJugable personaje) {
+        switch (personaje.getRareza()) {
+            case MEDIA -> {
+                cola_Alta.Encolar(personaje);
+            }
+
+            case BAJA -> {
+                cola_Media.Encolar(personaje);
+            }
+
+            default ->
+                throw new AssertionError();
+        }
     }
+
 }
