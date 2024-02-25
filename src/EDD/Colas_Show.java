@@ -38,12 +38,7 @@ public class Colas_Show {
     }
 
     public void decidir_Accion_Pelea(Resultado_Pelea resultado_Pelea, PersonajeJugable personaje) {
-        var personaje_refuerzo = cola_Refuerzo.Desencolar();
-        if (Funciones.try_Probability(40)) {
-            cola_Alta.Encolar(personaje_refuerzo);
-        } else {
-            cola_Refuerzo.Encolar(personaje_refuerzo);
-        }
+        actualizar_ColaRefuerzo();
         
         switch (resultado_Pelea) {
             case VICTORIA -> {
@@ -64,6 +59,15 @@ public class Colas_Show {
 
             default ->
                 throw new AssertionError();
+        }
+    }
+
+    private void actualizar_ColaRefuerzo() {
+        var personaje_refuerzo = cola_Refuerzo.Desencolar();
+        if (Funciones.try_Probability(40)) {
+            cola_Alta.Encolar(personaje_refuerzo);
+        } else {
+            cola_Refuerzo.Encolar(personaje_refuerzo);
         }
     }
 
