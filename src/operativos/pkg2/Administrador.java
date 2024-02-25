@@ -4,12 +4,9 @@
  */
 package operativos.pkg2;
 
-import EDD.Colas_Show;
-import Enums.Resultado_Pelea;
 import Personajes.PersonajeJugable;
 import Utils.Contador;
 import Utils.Funciones;
-import java.util.Random;
 
 /**
  *
@@ -26,11 +23,14 @@ public final class Administrador {
 
     private static Administrador instance;
 
+    private PersonajeJugable[] ganadores;
+
     public Administrador(Show show1, Show show2) {
         this.show1 = show1;
         this.show2 = show2;
         this.IA = Inteligencia_Artificial.getInstance();
 
+        this.ganadores = new PersonajeJugable[0];
         this.contador = new Contador(2);
     }
 
@@ -38,6 +38,13 @@ public final class Administrador {
     public static Administrador getInstance(Show show1, Show show2) {
         if (instance == null) {
             instance = new Administrador(show1, show2);
+        }
+        return instance;
+    }
+
+    public static Administrador getInstance() {
+        if (instance == null) {
+            throw new Error("Administrador not initialized");
         }
         return instance;
     }
@@ -72,9 +79,16 @@ public final class Administrador {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show1);
             colas_Show_2.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
         }
-        
+
         colas_Show_1.incrementarContadores_Jugadores();
         colas_Show_2.incrementarContadores_Jugadores();
+    }
+
+    public void agregarGanador(PersonajeJugable personaje) {
+        PersonajeJugable[] newGanadores = new PersonajeJugable[ganadores.length + 1];
+        System.arraycopy(ganadores, 0, newGanadores, 0, ganadores.length);
+        newGanadores[ganadores.length] = personaje;
+        ganadores = newGanadores;
     }
 
 }
