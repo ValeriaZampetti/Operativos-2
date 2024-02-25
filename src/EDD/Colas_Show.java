@@ -38,9 +38,20 @@ public class Colas_Show {
     }
 
     public void decidir_Accion_Pelea(Resultado_Pelea resultado_Pelea, PersonajeJugable personaje) {
+        var personaje_refuerzo = cola_Refuerzo.Desencolar();
+        if (Funciones.try_Probability(40)) {
+            cola_Alta.Encolar(personaje_refuerzo);
+        } else {
+            cola_Refuerzo.Encolar(personaje_refuerzo);
+        }
+        
         switch (resultado_Pelea) {
             case VICTORIA -> {
-//                TODO - Mostrar ganador y guardar en lista de ganadores
+                if (personaje == null) {
+                    return;
+                }
+//                TODO - Winning logic
+//Guardarlo en una lista de ganadores
             }
 
             case EMPATE -> {
@@ -48,12 +59,6 @@ public class Colas_Show {
             }
 
             case INCAPAZ -> {
-                var personaje_refuerzo = cola_Refuerzo.Desencolar();
-                if (Funciones.try_Probability(40)) {
-                    cola_Alta.Encolar(personaje_refuerzo);
-                } else {
-                    cola_Refuerzo.Encolar(personaje_refuerzo);
-                }
                 cola_Refuerzo.Encolar(personaje);
             }
 
