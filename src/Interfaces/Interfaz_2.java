@@ -4,6 +4,10 @@
  */
 package Interfaces;
 
+import java.awt.Color;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+
 /**
  *
  * @author valeriazampetti
@@ -14,7 +18,15 @@ public class Interfaz_2 extends javax.swing.JFrame {
      * Creates new form Interfaz_2
      */
     public Interfaz_2() {
+        
+        this.ColaN1.getTitulo().setText("Cola de Prioridad 1");
         initComponents();
+        
+      
+       
+       
+       
+       
     }
 
     /**
@@ -26,18 +38,12 @@ public class Interfaz_2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel5 = new javax.swing.JLabel();
+        ColaN1 = new Interfaces.ColaInterfaz();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 699, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(ColaN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 350, 160));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +84,7 @@ public class Interfaz_2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private Interfaces.ColaInterfaz ColaN1;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

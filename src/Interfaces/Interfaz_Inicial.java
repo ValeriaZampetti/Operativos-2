@@ -19,11 +19,14 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  * @author valeriazampetti
  */
 public class Interfaz_Inicial extends javax.swing.JFrame {
+   private ColaInterfaz cola;
 
     /**
      * Creates new form Interfaz_Inicial
      */
     public Interfaz_Inicial() {
+      this.cola= new ColaInterfaz();
+        
         initComponents();
     }
 
