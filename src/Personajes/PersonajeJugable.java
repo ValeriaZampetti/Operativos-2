@@ -55,6 +55,14 @@ public class PersonajeJugable {
         }
     }
 
+    @Override
+    public String toString() {
+        return "PersonajeJugable{" + "id=" + id + '}';
+    }
+    
+    
+    
+
     public boolean pertenece_A_Cola(Colas_Show colas) {
 //        TODO operacion utilizando el id para determianr acual cola pertence
         return true;
