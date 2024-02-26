@@ -84,5 +84,16 @@ public class Cola<T> {
     public T LeerCabeza() {
         return pInicio.getElemento();
     }
+    
+    public String StringInterfaz(){
+        Nodo<T> node = pFinal;
+        String aux = "";
+        while (node != null) {
+            aux = " " + node.getElemento().toString() + " " + aux;
+            node = node.getSiguiente();
+        }
+        return aux;
+    }
+    
 
 }
