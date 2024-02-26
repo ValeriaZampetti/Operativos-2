@@ -42,19 +42,65 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        ID = new javax.swing.JLabel();
+        Foto = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Poder = new javax.swing.JLabel();
+        IndicadorResultado = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(245, 230, 200));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel1.setText("ID: ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, -1));
+
+        ID.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        ID.setText("---");
+        jPanel1.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+
+        Foto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1N.png"))); // NOI18N
+        jPanel1.add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 330, 450));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel2.setText("Poder: ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        Poder.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Poder.setText("---");
+        jPanel1.add(Poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+
+        IndicadorResultado.setDisplayedMnemonic('n');
+        IndicadorResultado.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(IndicadorResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, 260, 80));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Foto;
+    private javax.swing.JLabel ID;
+    private javax.swing.JLabel IndicadorResultado;
+    private javax.swing.JLabel Poder;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
