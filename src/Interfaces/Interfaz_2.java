@@ -20,6 +20,13 @@ public class Interfaz_2 extends javax.swing.JFrame {
     public Interfaz_2() {
         
         this.ColaN1.getTitulo().setText("Cola de Prioridad 1");
+        this.ColaN2.getTitulo().setText("Cola de Prioridad 2");
+        this.ColaN3.getTitulo().setText("Cola de Prioridad 3");
+        this.ColaS1.getTitulo().setText("Cola de Prioridad 1");
+        this.ColaS2.getTitulo().setText("Cola de Prioridad 2");
+        this.ColaS3.getTitulo().setText("Cola de Prioridad 3");
+        this.ColaRecuperacionN.getTitulo().setText("Cola de Recuperacion");
+        this.ColaRecuperacionS.getTitulo().setText("Cola de Recuperacion");
         initComponents();
         
       
@@ -39,21 +46,21 @@ public class Interfaz_2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
-        ColaN1 = new Interfaces.ColaInterfaz();
+        ColaRecuperacionN = new Interfaces.ColaInterfaz();
         ColaS1 = new Interfaces.ColaInterfaz();
         ColaS2 = new Interfaces.ColaInterfaz();
         GanadoresN = new javax.swing.JLabel();
         ColaRecuperacionS = new Interfaces.ColaInterfaz();
-        ColaN4 = new Interfaces.ColaInterfaz();
-        ColaN5 = new Interfaces.ColaInterfaz();
-        ColaRecuperacion1 = new Interfaces.ColaInterfaz();
+        ColaN1 = new Interfaces.ColaInterfaz();
+        ColaN2 = new Interfaces.ColaInterfaz();
+        ColaN3 = new Interfaces.ColaInterfaz();
         ColaS3 = new Interfaces.ColaInterfaz();
         GanadoresS = new javax.swing.JLabel();
         GanadoresN1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(ColaN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 360, 120));
+        getContentPane().add(ColaRecuperacionN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 360, 120));
         getContentPane().add(ColaS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, 360, 100));
         getContentPane().add(ColaS2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 150, 360, 100));
 
@@ -64,9 +71,9 @@ public class Interfaz_2 extends javax.swing.JFrame {
         GanadoresN.setText("Peleas Ganadas: 0");
         getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 390, 230, 50));
         getContentPane().add(ColaRecuperacionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 460, 360, 120));
-        getContentPane().add(ColaN4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 360, 100));
-        getContentPane().add(ColaN5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 360, 100));
-        getContentPane().add(ColaRecuperacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 360, 120));
+        getContentPane().add(ColaN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 360, 100));
+        getContentPane().add(ColaN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 360, 100));
+        getContentPane().add(ColaN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 360, 120));
         getContentPane().add(ColaS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 270, 360, 120));
 
         GanadoresS.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -122,9 +129,9 @@ public class Interfaz_2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Interfaces.ColaInterfaz ColaN1;
-    private Interfaces.ColaInterfaz ColaN4;
-    private Interfaces.ColaInterfaz ColaN5;
-    private Interfaces.ColaInterfaz ColaRecuperacion1;
+    private Interfaces.ColaInterfaz ColaN2;
+    private Interfaces.ColaInterfaz ColaN3;
+    private Interfaces.ColaInterfaz ColaRecuperacionN;
     private Interfaces.ColaInterfaz ColaRecuperacionS;
     private Interfaces.ColaInterfaz ColaS1;
     private Interfaces.ColaInterfaz ColaS2;
