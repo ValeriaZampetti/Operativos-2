@@ -72,7 +72,7 @@ public class ColaInterfaz extends javax.swing.JPanel {
         ContenidoCola.setText("---");
         jScrollPane1.setViewportView(ContenidoCola);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 650, 300));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 500, 300));
 
         jLabel2.setText("Fin");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
@@ -80,7 +80,7 @@ public class ColaInterfaz extends javax.swing.JPanel {
         jLabel3.setText("Inicio");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 653, 355));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 355));
     }// </editor-fold>//GEN-END:initComponents
 
 
