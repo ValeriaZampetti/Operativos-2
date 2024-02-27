@@ -57,6 +57,7 @@ public class Interfaz_2 extends javax.swing.JFrame {
         ColaS3 = new Interfaces.ColaInterfaz();
         GanadoresS = new javax.swing.JLabel();
         GanadoresN1 = new javax.swing.JLabel();
+        personajeInterfaz1 = new Interfaces.PersonajeInterfaz();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,6 +89,7 @@ public class Interfaz_2 extends javax.swing.JFrame {
         GanadoresN1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresN1.setText("Peleas Ganadas: 0");
         getContentPane().add(GanadoresN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 230, 50));
+        getContentPane().add(personajeInterfaz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 370, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,5 +142,6 @@ public class Interfaz_2 extends javax.swing.JFrame {
     private javax.swing.JLabel GanadoresN1;
     private javax.swing.JLabel GanadoresS;
     private javax.swing.JLabel jLabel5;
+    private Interfaces.PersonajeInterfaz personajeInterfaz1;
     // End of variables declaration//GEN-END:variables
 }

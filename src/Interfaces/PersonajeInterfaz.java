@@ -4,8 +4,11 @@
  */
 package Interfaces;
 
+import Personajes.Personaje;
 import java.awt.Color;
 import java.util.Random;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
@@ -31,6 +34,47 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         Border border = new LineBorder(new Color(139, 69, 19), 2); 
         this.setBorder(border);
     
+    }
+    
+     public void CambiarIconoEsperar() {
+        this.Foto.setIcon(new ImageIcon("src\\imagenes\\VAyR.gif"));
+        this.Poder.setText("--");
+        this.ID.setText("--");
+         this.IndicadorResultado.setIcon(null);
+    }
+     
+    public void CambiarIconoPelea() {
+        this.IndicadorResultado.setIcon(new ImageIcon("src\\imagenes\\pelea.png"));
+    }
+    
+        
+    public void CambiarIconoGanador() {
+        this.IndicadorResultado.setIcon(new ImageIcon("src\\imagenes\\ganador.png"));  
+    }
+    
+    public void CambiarIconoPerdedor() {
+        this.IndicadorResultado.setIcon(new ImageIcon("src\\imagenes\\perdedor.png"));
+    }
+    public void CambiarIconoEmpate() {
+        this.IndicadorResultado.setIcon(new ImageIcon("src\\imagenes\\empate.png"));
+    }
+    
+//    public void ActualizarPersonjaeInterfaz(Personaje Personaje12) {
+//        this.getIndicadorResultado().setEnabled(false);
+//        this.getID().setText(Personaje12.getId());
+//        
+//    }
+    
+       public JLabel getFoto() {
+        return Foto;
+    }
+
+    public JLabel getID() {
+        return ID;
+    }
+
+    public JLabel getIndicadorResultado() {
+        return IndicadorResultado;
     }
 
     /**
@@ -75,7 +119,8 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
 
         IndicadorResultado.setDisplayedMnemonic('n');
         IndicadorResultado.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(IndicadorResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, 260, 80));
+        IndicadorResultado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelea.png"))); // NOI18N
+        jPanel1.add(IndicadorResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 220, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
