@@ -19,13 +19,13 @@ public class Show {
     public Personaje personajes[];
     private final Colas_Show cola_Show;
     private Contador contador;
-    
+
     public final String id; //Debería verse como AVATAR
 
-    public Show(String id, Personaje[] personajes, Colas_Show cola_Show) {
+    public Show(String id, Personaje[] personajes) {
         this.personajes = personajes;
-        this.cola_Show = cola_Show;
-        
+        this.cola_Show = new Colas_Show();
+
         this.id = id;
     }
 
@@ -45,7 +45,7 @@ public class Show {
     public String crear_PersonajeId() {
         var num_Personaje = contador.getActual();
         contador.incrementarContador();
-        
+
         return id + "-" + num_Personaje;
     }
 
