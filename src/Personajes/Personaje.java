@@ -10,6 +10,7 @@ package Personajes;
  */
 public class Personaje {
 
+//    TODO - Ver manera de añadir el path a la imagen
     public String nombre;
     public int puntos_Habilidades;
     public int puntos_Vida;
