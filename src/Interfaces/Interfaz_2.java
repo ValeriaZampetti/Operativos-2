@@ -4,7 +4,7 @@
  */
 package Interfaces;
 
-import CarpetaClases.Personaje;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
@@ -164,15 +164,15 @@ public class Interfaz_2 extends javax.swing.JFrame {
         
     }
     
-    public void ActualizarGanadores(Personaje Person, int contador){
-    char primerCaracter = Person.getEmpresa().charAt(0);
-    if(primerCaracter=='N'){
-    this.getGanadoresN().setText("Peleas Ganadas: " + contador);
-   
-    } else{
-    this.getGanadoresS().setText("Peleas Ganadas: " + contador);
-    }
-    }
+//    public void ActualizarGanadores(Personaje Person, int contador){
+//    char primerCaracter = Person.getEmpresa().charAt(0);
+//    if(primerCaracter=='N'){
+//    this.getGanadoresN().setText("Peleas Ganadas: " + contador);
+//   
+//    } else{
+//    this.getGanadoresS().setText("Peleas Ganadas: " + contador);
+//    }
+//    }
 
     public PersonajeInterfaz getPersonajeN() {
         return PersonajeN;
