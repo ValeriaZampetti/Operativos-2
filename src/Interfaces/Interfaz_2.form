@@ -32,27 +32,6 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Component class="Interfaces.ColaInterfaz" name="ColaRecuperacionN">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="600" width="360" height="120"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="Interfaces.ColaInterfaz" name="ColaS1">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1070" y="190" width="360" height="100"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="Interfaces.ColaInterfaz" name="ColaS2">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1070" y="310" width="360" height="100"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JLabel" name="GanadoresS">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -70,41 +49,6 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="1070" y="570" width="230" height="50"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="Interfaces.ColaInterfaz" name="ColaRecuperacionS">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1070" y="640" width="360" height="120"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="Interfaces.ColaInterfaz" name="ColaN1">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="170" width="360" height="100"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="Interfaces.ColaInterfaz" name="ColaN2">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="300" width="360" height="100"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="Interfaces.ColaInterfaz" name="ColaN3">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="410" width="360" height="120"/>
-        </Constraint>
-      </Constraints>
-    </Component>
-    <Component class="Interfaces.ColaInterfaz" name="ColaS3">
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1070" y="440" width="360" height="120"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -155,7 +99,27 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="520" y="20" width="480" height="-1"/>
+          <AbsoluteConstraints x="450" y="20" width="480" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="Interfaces.Colas_ShowInterfaz" name="colas_AVATAR">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new Interfaces.Colas_ShowInterfaz(&#xa;this.show_AVATAR.getCola_Show()&#xa;)"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="0" width="560" height="810"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="Interfaces.Colas_ShowInterfaz" name="colas_SM">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new Interfaces.Colas_ShowInterfaz(&#xa;this.show_SM.getCola_Show()&#xa;)"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="785" y="0" width="660" height="820"/>
         </Constraint>
       </Constraints>
     </Component>

@@ -13,30 +13,33 @@ import javax.swing.JLabel;
  */
 public class ColaInterfaz extends javax.swing.JPanel {
 
+    private Cola cola;
+
     /**
      * Creates new form NewJPanel
      */
-    public ColaInterfaz() {
+    public ColaInterfaz(Cola cola, String nombre) {
+        this.cola = cola;
         initComponents();
+        this.getTitulo().setText(nombre);
     }
-    public ColaInterfaz(String Nombre) {
+    
+     public ColaInterfaz() {
+        this.cola = new Cola();
         initComponents();
-        this.getTitulo().setText(Nombre);
+        this.getTitulo().setText("");
     }
-
+     
     public JLabel getContenidoCola() {
         return ContenidoCola;
     }
-
 
     public JLabel getTitulo() {
         return Titulo;
     }
 
-    
-    
-    public void CambiarColaInterfaz(Cola cola){
-        this.ContenidoCola.setText(cola.StringInterfaz());
+    public void CambiarColaInterfaz() {
+        this.ContenidoCola.setText(this.cola.StringInterfaz());
     }
 
     /**

@@ -4,11 +4,12 @@
  */
 package Interfaces;
 
-
+import Personajes.Personaje;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+import operativos.pkg2.Show;
 
 /**
  *
@@ -16,37 +17,50 @@ import javax.swing.border.LineBorder;
  */
 public class Interfaz_2 extends javax.swing.JFrame {
 
+    private final Show show_SM;
+    private final Show show_AVATAR;
+
     /**
      * Creates new form Interfaz_2
      */
     public Interfaz_2() {
-         
+        var personajes_SM = new Personaje[]{
+            new Personaje("Mordecai", 50, 30, 40, 60)};
+        var personajes_AVATAR = new Personaje[]{
+            new Personaje("Aang", 60, 30, 40, 70)
+        };
+
+        this.show_AVATAR = new Show("AVATAR", personajes_AVATAR);
+
+        this.show_SM = new Show("SM", personajes_SM);
+
         initComponents();
-        this.getGanadoresS().setBackground(new Color(246,189,255)); 
-        this.getGanadoresS().setForeground(Color.BLACK);
-        Border border = new LineBorder(new Color(246,189,255), 2); 
-        this.getGanadoresS().setBorder(border);
-        this.getGanadoresN().setBorder(border);
-        this.getGanadoresN().setOpaque(true);
-        this.getGanadoresN().setBackground(new Color(246,189,255)); 
-        this.getGanadoresN().setForeground(Color.BLACK);
-        Border border1 = new LineBorder(new Color(246,189,255), 2); 
-        this.getGanadoresN().setBorder(border1);
-        
-        this.ColaN1.getTitulo().setText("Cola de Prioridad 1");
-        this.ColaN2.getTitulo().setText("Cola de Prioridad 2");
-        this.ColaN3.getTitulo().setText("Cola de Prioridad 3");
-        this.ColaS1.getTitulo().setText("Cola de Prioridad 1");
-        this.ColaS2.getTitulo().setText("Cola de Prioridad 2");
-        this.ColaS3.getTitulo().setText("Cola de Prioridad 3");
-        this.ColaRecuperacionN.getTitulo().setText("Cola de Recuperacion");
-        this.ColaRecuperacionS.getTitulo().setText("Cola de Recuperacion");
-        
-      
-       
-       
-       
-       
+
+        this.getGanadoresS()
+                .setBackground(new Color(246, 189, 255));
+
+        this.getGanadoresS()
+                .setForeground(Color.BLACK);
+        Border border = new LineBorder(new Color(246, 189, 255), 2);
+
+        this.getGanadoresS()
+                .setBorder(border);
+
+        this.getGanadoresN()
+                .setBorder(border);
+
+        this.getGanadoresN()
+                .setOpaque(true);
+
+        this.getGanadoresN()
+                .setBackground(new Color(246, 189, 255));
+
+        this.getGanadoresN()
+                .setForeground(Color.BLACK);
+        Border border1 = new LineBorder(new Color(246, 189, 255), 2);
+
+        this.getGanadoresN()
+                .setBorder(border1);
     }
 
     /**
@@ -59,27 +73,22 @@ public class Interfaz_2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
-        ColaRecuperacionN = new Interfaces.ColaInterfaz();
-        ColaS1 = new Interfaces.ColaInterfaz();
-        ColaS2 = new Interfaces.ColaInterfaz();
         GanadoresS = new javax.swing.JLabel();
-        ColaRecuperacionS = new Interfaces.ColaInterfaz();
-        ColaN1 = new Interfaces.ColaInterfaz();
-        ColaN2 = new Interfaces.ColaInterfaz();
-        ColaN3 = new Interfaces.ColaInterfaz();
-        ColaS3 = new Interfaces.ColaInterfaz();
         GanadoresN = new javax.swing.JLabel();
         PersonajeN = new Interfaces.PersonajeInterfaz();
         PersonajeS = new Interfaces.PersonajeInterfaz();
         EstadoIA = new javax.swing.JLabel();
+        colas_AVATAR = new Interfaces.Colas_ShowInterfaz(
+            this.show_AVATAR.getCola_Show()
+        );
+        colas_SM = new Interfaces.Colas_ShowInterfaz(
+            this.show_SM.getCola_Show()
+        );
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(ColaRecuperacionN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 360, 120));
-        getContentPane().add(ColaS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 190, 360, 100));
-        getContentPane().add(ColaS2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 310, 360, 100));
 
         GanadoresS.setBackground(new java.awt.Color(245, 230, 200));
         GanadoresS.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -87,11 +96,6 @@ public class Interfaz_2 extends javax.swing.JFrame {
         GanadoresS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresS.setText("Peleas Ganadas: 0");
         getContentPane().add(GanadoresS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 570, 230, 50));
-        getContentPane().add(ColaRecuperacionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 640, 360, 120));
-        getContentPane().add(ColaN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 360, 100));
-        getContentPane().add(ColaN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 360, 100));
-        getContentPane().add(ColaN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 360, 120));
-        getContentPane().add(ColaS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 440, 360, 120));
 
         GanadoresN.setBackground(new java.awt.Color(245, 230, 200));
         GanadoresN.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -106,7 +110,9 @@ public class Interfaz_2 extends javax.swing.JFrame {
         EstadoIA.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         EstadoIA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EstadoIA.setText("Estado de la IA");
-        getContentPane().add(EstadoIA, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 480, -1));
+        getContentPane().add(EstadoIA, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 480, -1));
+        getContentPane().add(colas_AVATAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 810));
+        getContentPane().add(colas_SM, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 0, 660, 820));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pexels-codioful-(formerly-gradienta)-6985136.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -129,16 +135,24 @@ public class Interfaz_2 extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_2.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_2.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_2.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_2.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -149,21 +163,21 @@ public class Interfaz_2 extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public JLabel getEstadoIA() {
         return EstadoIA;
     }
 
     public void setEstadoIA(String EstadoIA) {
-    this.getEstadoIA().setText("Estado de la IA → " + EstadoIA);
-    this.getEstadoIA().setOpaque(true); 
-    getEstadoIA().setBackground(new Color(245, 230, 200)); 
-    this.getEstadoIA().setForeground(Color.BLACK);
-    Border border = new LineBorder(new Color(139, 69, 19), 2); 
-    this.getEstadoIA().setBorder(border);
-        
+        this.getEstadoIA().setText("Estado de la IA → " + EstadoIA);
+        this.getEstadoIA().setOpaque(true);
+        getEstadoIA().setBackground(new Color(245, 230, 200));
+        this.getEstadoIA().setForeground(Color.BLACK);
+        Border border = new LineBorder(new Color(139, 69, 19), 2);
+        this.getEstadoIA().setBorder(border);
+
     }
-    
+
 //    public void ActualizarGanadores(Personaje Person, int contador){
 //    char primerCaracter = Person.getEmpresa().charAt(0);
 //    if(primerCaracter=='N'){
@@ -173,7 +187,6 @@ public class Interfaz_2 extends javax.swing.JFrame {
 //    this.getGanadoresS().setText("Peleas Ganadas: " + contador);
 //    }
 //    }
-
     public PersonajeInterfaz getPersonajeN() {
         return PersonajeN;
     }
@@ -190,52 +203,14 @@ public class Interfaz_2 extends javax.swing.JFrame {
         return GanadoresS;
     }
 
-    public ColaInterfaz getColaN1() {
-        return ColaN1;
-    }
-
-    public ColaInterfaz getColaN2() {
-        return ColaN2;
-    }
-
-    public ColaInterfaz getColaN3() {
-        return ColaN3;
-    }
-
-    public ColaInterfaz getColaRecuperacionN() {
-        return ColaRecuperacionN;
-    }
-
-    public ColaInterfaz getColaRecuperacionS() {
-        return ColaRecuperacionS;
-    }
-
-    public ColaInterfaz getColaS1() {
-        return ColaS1;
-    }
-
-    public ColaInterfaz getColaS2() {
-        return ColaS2;
-    }
-
-    public ColaInterfaz getColaS3() {
-        return ColaS3;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Interfaces.ColaInterfaz ColaN1;
-    private Interfaces.ColaInterfaz ColaN2;
-    private Interfaces.ColaInterfaz ColaN3;
-    private Interfaces.ColaInterfaz ColaRecuperacionN;
-    private Interfaces.ColaInterfaz ColaRecuperacionS;
-    private Interfaces.ColaInterfaz ColaS1;
-    private Interfaces.ColaInterfaz ColaS2;
-    private Interfaces.ColaInterfaz ColaS3;
     private javax.swing.JLabel EstadoIA;
     private javax.swing.JLabel GanadoresN;
     private javax.swing.JLabel GanadoresS;
     private Interfaces.PersonajeInterfaz PersonajeN;
     private Interfaces.PersonajeInterfaz PersonajeS;
+    private Interfaces.Colas_ShowInterfaz colas_AVATAR;
+    private Interfaces.Colas_ShowInterfaz colas_SM;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
