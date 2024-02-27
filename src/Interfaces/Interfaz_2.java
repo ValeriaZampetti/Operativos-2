@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+import operativos.pkg2.Administrador;
 import operativos.pkg2.Show;
 
 /**
@@ -19,6 +20,8 @@ public class Interfaz_2 extends javax.swing.JFrame {
 
     private final Show show_SM;
     private final Show show_AVATAR;
+    
+    private final Administrador administrador;
 
     /**
      * Creates new form Interfaz_2
@@ -42,6 +45,8 @@ public class Interfaz_2 extends javax.swing.JFrame {
 
         this.show_SM = new Show("SM", personajes_SM);
 
+        this.administrador = new Administrador(show_SM, show_SM);
+        
         initComponents();
 
         this.getGanadoresS()
