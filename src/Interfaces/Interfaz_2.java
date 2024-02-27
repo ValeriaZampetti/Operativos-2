@@ -25,10 +25,18 @@ public class Interfaz_2 extends javax.swing.JFrame {
      */
     public Interfaz_2() {
         var personajes_SM = new Personaje[]{
-            new Personaje("Mordecai", 50, 30, 40, 60)};
+            new Personaje("Mordecai", 50, 30, 40, 60),
+            new Personaje("Rigby", 70, 10, 20, 80),
+            new Personaje("Musculoso", 30, 70, 70, 30),
+            new Personaje("Fantasmano", 80, 10, 10, 90),
+            new Personaje("Benson", 40, 40, 40, 30)};
+
         var personajes_AVATAR = new Personaje[]{
-            new Personaje("Aang", 60, 30, 40, 70)
-        };
+            new Personaje("Aang", 60, 30, 40, 70),
+            new Personaje("Azula", 50, 40, 50, 70),
+            new Personaje("Sokka", 70, 50, 10, 70),
+            new Personaje("Toph", 70, 70, 70, 20),
+            new Personaje("Zuko", 60, 40, 40, 70)};
 
         this.show_AVATAR = new Show("AVATAR", personajes_AVATAR);
 
