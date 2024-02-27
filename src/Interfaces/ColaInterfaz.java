@@ -57,8 +57,10 @@ public class ColaInterfaz extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(245, 230, 200));
+        jPanel1.setBackground(new java.awt.Color(150, 77, 128));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 69, 19), 2));
+        jPanel1.setForeground(new java.awt.Color(246, 189, 255));
+        jPanel1.setAutoscrolls(true);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Titulo.setText("Nombre de la Cola");

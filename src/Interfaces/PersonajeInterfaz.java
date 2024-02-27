@@ -28,34 +28,34 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         rand = new Random();
         this.contador = rand.nextInt(10) + 1;
         this.setOpaque(true); 
-        this.setBackground(new Color(245, 230, 200));
-        this.setForeground(Color.BLACK);
-        Border border = new LineBorder(new Color(139, 69, 19), 2); 
+        this.setBackground(new Color(246,189,255));
+        this.setForeground(Color.WHITE);
+        Border border = new LineBorder(new Color(246,189,255), 2); 
         this.setBorder(border);
     
     }
     
      public void CambiarIconoEsperar() {
-        this.Foto.setIcon(new ImageIcon("src\\imagenes\\VAyR.gif"));
+        this.Foto.setIcon(new ImageIcon("src\\Imagenes\\VAyR.gif"));
         this.Poder.setText("--");
         this.ID.setText("--");
          this.IndicadorResultado.setIcon(null);
     }
      
     public void CambiarIconoPelea() {
-        this.IndicadorResultado.setIcon(new ImageIcon("src\\imagenes\\pelea.png"));
+        this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\pelea.png"));
     }
     
         
     public void CambiarIconoGanador() {
-        this.IndicadorResultado.setIcon(new ImageIcon("src\\imagenes\\ganador.png"));  
+        this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\ganador.png"));  
     }
     
     public void CambiarIconoPerdedor() {
-        this.IndicadorResultado.setIcon(new ImageIcon("src\\imagenes\\perdedor.png"));
+        this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\perdedor.png"));
     }
     public void CambiarIconoEmpate() {
-        this.IndicadorResultado.setIcon(new ImageIcon("src\\imagenes\\empate.png"));
+        this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\empate.png"));
     }
     
 //    public void ActualizarPersonjaeInterfaz(Personaje Personaje12) {
@@ -93,7 +93,8 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         Poder = new javax.swing.JLabel();
         IndicadorResultado = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(245, 230, 200));
+        jPanel1.setBackground(new java.awt.Color(150, 77, 128));
+        jPanel1.setForeground(new java.awt.Color(246, 189, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N

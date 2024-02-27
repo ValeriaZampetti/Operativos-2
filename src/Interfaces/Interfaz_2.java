@@ -22,14 +22,15 @@ public class Interfaz_2 extends javax.swing.JFrame {
     public Interfaz_2() {
          
         initComponents();
-        this.getGanadoresS().setBackground(new Color(245, 230, 200)); 
+        this.getGanadoresS().setBackground(new Color(246,189,255)); 
         this.getGanadoresS().setForeground(Color.BLACK);
-        Border border = new LineBorder(new Color(139, 69, 19), 2); 
+        Border border = new LineBorder(new Color(246,189,255), 2); 
         this.getGanadoresS().setBorder(border);
+        this.getGanadoresN().setBorder(border);
         this.getGanadoresN().setOpaque(true);
-        this.getGanadoresN().setBackground(new Color(245, 230, 200)); 
+        this.getGanadoresN().setBackground(new Color(246,189,255)); 
         this.getGanadoresN().setForeground(Color.BLACK);
-        Border border1 = new LineBorder(new Color(139, 69, 19), 2); 
+        Border border1 = new LineBorder(new Color(246,189,255), 2); 
         this.getGanadoresN().setBorder(border1);
         
         this.ColaN1.getTitulo().setText("Cola de Prioridad 1");
@@ -61,48 +62,43 @@ public class Interfaz_2 extends javax.swing.JFrame {
         ColaRecuperacionN = new Interfaces.ColaInterfaz();
         ColaS1 = new Interfaces.ColaInterfaz();
         ColaS2 = new Interfaces.ColaInterfaz();
-        GanadoresN = new javax.swing.JLabel();
+        GanadoresS = new javax.swing.JLabel();
         ColaRecuperacionS = new Interfaces.ColaInterfaz();
         ColaN1 = new Interfaces.ColaInterfaz();
         ColaN2 = new Interfaces.ColaInterfaz();
         ColaN3 = new Interfaces.ColaInterfaz();
         ColaS3 = new Interfaces.ColaInterfaz();
-        GanadoresS = new javax.swing.JLabel();
-        GanadoresN1 = new javax.swing.JLabel();
+        GanadoresN = new javax.swing.JLabel();
         PersonajeN = new Interfaces.PersonajeInterfaz();
         PersonajeS = new Interfaces.PersonajeInterfaz();
         EstadoIA = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(ColaRecuperacionN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 360, 120));
-        getContentPane().add(ColaS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 20, 360, 100));
-        getContentPane().add(ColaS2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 150, 360, 100));
+        getContentPane().add(ColaRecuperacionN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 360, 120));
+        getContentPane().add(ColaS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 190, 360, 100));
+        getContentPane().add(ColaS2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 310, 360, 100));
+
+        GanadoresS.setBackground(new java.awt.Color(245, 230, 200));
+        GanadoresS.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        GanadoresS.setForeground(new java.awt.Color(0, 0, 0));
+        GanadoresS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        GanadoresS.setText("Peleas Ganadas: 0");
+        getContentPane().add(GanadoresS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 570, 230, 50));
+        getContentPane().add(ColaRecuperacionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 640, 360, 120));
+        getContentPane().add(ColaN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 360, 100));
+        getContentPane().add(ColaN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 360, 100));
+        getContentPane().add(ColaN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 360, 120));
+        getContentPane().add(ColaS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 440, 360, 120));
 
         GanadoresN.setBackground(new java.awt.Color(245, 230, 200));
         GanadoresN.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         GanadoresN.setForeground(new java.awt.Color(0, 0, 0));
         GanadoresN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresN.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 390, 230, 50));
-        getContentPane().add(ColaRecuperacionS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 460, 360, 120));
-        getContentPane().add(ColaN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 360, 100));
-        getContentPane().add(ColaN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 360, 100));
-        getContentPane().add(ColaN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 360, 120));
-        getContentPane().add(ColaS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 270, 360, 120));
-
-        GanadoresS.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        GanadoresS.setForeground(new java.awt.Color(0, 0, 0));
-        GanadoresS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        GanadoresS.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 650, 230, -1));
-
-        GanadoresN1.setBackground(new java.awt.Color(245, 230, 200));
-        GanadoresN1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        GanadoresN1.setForeground(new java.awt.Color(0, 0, 0));
-        GanadoresN1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        GanadoresN1.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 230, 50));
+        getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 230, 50));
         getContentPane().add(PersonajeN, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 320, 660));
         getContentPane().add(PersonajeS, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 360, 660));
 
@@ -111,6 +107,10 @@ public class Interfaz_2 extends javax.swing.JFrame {
         EstadoIA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EstadoIA.setText("Estado de la IA");
         getContentPane().add(EstadoIA, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 480, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pexels-codioful-(formerly-gradienta)-6985136.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-720, -150, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,7 +183,7 @@ public class Interfaz_2 extends javax.swing.JFrame {
     }
 
     public JLabel getGanadoresN() {
-        return GanadoresN;
+        return GanadoresS;
     }
 
     public final JLabel getGanadoresS() {
@@ -233,10 +233,10 @@ public class Interfaz_2 extends javax.swing.JFrame {
     private Interfaces.ColaInterfaz ColaS3;
     private javax.swing.JLabel EstadoIA;
     private javax.swing.JLabel GanadoresN;
-    private javax.swing.JLabel GanadoresN1;
     private javax.swing.JLabel GanadoresS;
     private Interfaces.PersonajeInterfaz PersonajeN;
     private Interfaces.PersonajeInterfaz PersonajeS;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
