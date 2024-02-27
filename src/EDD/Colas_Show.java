@@ -14,11 +14,11 @@ import Utils.Funciones;
  */
 public class Colas_Show {
 
-    private final Cola<PersonajeJugable> cola_Alta;
-    private final Cola<PersonajeJugable> cola_Media;
-    private final Cola<PersonajeJugable> cola_Baja;
+    public final Cola<PersonajeJugable> cola_Alta;
+    public final Cola<PersonajeJugable> cola_Media;
+    public final Cola<PersonajeJugable> cola_Baja;
 
-    private final Cola<PersonajeJugable> cola_Refuerzo;
+    public final Cola<PersonajeJugable> cola_Refuerzo;
 
     public Colas_Show() {
         this.cola_Alta = new Cola();
@@ -39,7 +39,7 @@ public class Colas_Show {
 
     public void decidir_Accion_Pelea(Resultado_Pelea resultado_Pelea, PersonajeJugable personaje) {
         actualizar_ColaRefuerzo();
-        
+
         switch (resultado_Pelea) {
             case VICTORIA -> {
                 if (personaje == null) {
