@@ -56,6 +56,11 @@ public class PersonajeJugable {
         }
     }
 
+    @Override
+    public String toString() {
+        return "PersonajeJugable{" + "id=" + id + '}';
+    }
+    
     public boolean pertenece_A_Show(Show show) {
         var idParts = this.id.split("-");
         var showIdPart = idParts[0];

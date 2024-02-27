@@ -4,6 +4,8 @@
  */
 package operativos.pkg2;
 
+import Interfaces.Interfaz_Inicial;
+
 /**
  *
  * @author valeriazampetti
@@ -14,7 +16,8 @@ public class Operativos2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Interfaz_Inicial interfaz = new Interfaz_Inicial();
+        interfaz.show();
     }
     
 }
