@@ -61,7 +61,7 @@ public class Interfaz_Inicial extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 330, 90));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Mordecai.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -80, 510, 850));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -90, 510, 850));
 
         jButton2.setText("EXIT GAME");
         jButton2.addActionListener(new java.awt.event.ActionListener() {

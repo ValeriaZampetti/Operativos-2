@@ -21,6 +21,7 @@ public class Interfaz_2 extends javax.swing.JFrame {
      */
     public Interfaz_2() {
          
+        initComponents();
         this.getGanadoresS().setBackground(new Color(245, 230, 200)); 
         this.getGanadoresS().setForeground(Color.BLACK);
         Border border = new LineBorder(new Color(139, 69, 19), 2); 
@@ -39,7 +40,6 @@ public class Interfaz_2 extends javax.swing.JFrame {
         this.ColaS3.getTitulo().setText("Cola de Prioridad 3");
         this.ColaRecuperacionN.getTitulo().setText("Cola de Recuperacion");
         this.ColaRecuperacionS.getTitulo().setText("Cola de Recuperacion");
-        initComponents();
         
       
        
