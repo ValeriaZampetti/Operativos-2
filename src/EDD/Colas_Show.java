@@ -7,6 +7,7 @@ package EDD;
 import Enums.Resultado_Pelea;
 import Personajes.PersonajeJugable;
 import Utils.Funciones;
+import operativos.pkg2.Administrador;
 
 /**
  *
@@ -45,8 +46,8 @@ public class Colas_Show {
                 if (personaje == null) {
                     return;
                 }
-//                TODO - Winning logic
-//Guardarlo en una lista de ganadores
+//                REVIEW - Revisar que funcione bien  
+                Administrador.getInstance().agregarGanador(personaje);
             }
 
             case EMPATE -> {
