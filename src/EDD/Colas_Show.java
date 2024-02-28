@@ -93,8 +93,17 @@ public class Colas_Show {
     }
 
     private void incrementarContadores_PorCola(Cola<PersonajeJugable> cola) {
-//        TODO - Recorrer y hacer personaje.contador.incrementarContador() a TODOS
+        for (int i = 0; i < cola.getSize(); i++) {
+            var personaje = cola.Desencolar();
 
+            if (personaje.contador.incrementarContador()) {
+                promocionarJugador(personaje);
+            } else {
+                cola.Encolar(personaje);
+
+            }
+
+        }
     }
 
     private void promocionarJugador(PersonajeJugable personaje) {

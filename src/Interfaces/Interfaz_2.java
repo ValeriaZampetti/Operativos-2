@@ -27,6 +27,8 @@ public class Interfaz_2 extends javax.swing.JFrame {
      * Creates new form Interfaz_2
      */
     public Interfaz_2() {
+        var hola = new Personaje("Mordecai", 50, 30, 40, 60);
+        System.out.println(hola);
         var personajes_SM = new Personaje[]{
             new Personaje("Mordecai", 50, 30, 40, 60),
             new Personaje("Rigby", 70, 10, 20, 80),
@@ -115,17 +117,17 @@ public class Interfaz_2 extends javax.swing.JFrame {
         GanadoresN.setForeground(new java.awt.Color(0, 0, 0));
         GanadoresN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresN.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 230, 50));
-        getContentPane().add(PersonajeN, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 320, 660));
-        getContentPane().add(PersonajeS, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 360, 660));
+        getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 540, 230, 50));
+        getContentPane().add(PersonajeN, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 330, 740));
+        getContentPane().add(PersonajeS, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 70, 360, 740));
 
         EstadoIA.setBackground(new java.awt.Color(255, 255, 255));
         EstadoIA.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         EstadoIA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EstadoIA.setText("Estado de la IA");
         getContentPane().add(EstadoIA, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 480, -1));
-        getContentPane().add(colas_AVATAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 810));
-        getContentPane().add(colas_SM, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 0, 660, 820));
+        getContentPane().add(colas_AVATAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 800));
+        getContentPane().add(colas_SM, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 0, 640, 800));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pexels-codioful-(formerly-gradienta)-6985136.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
