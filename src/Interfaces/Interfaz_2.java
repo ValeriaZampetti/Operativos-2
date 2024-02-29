@@ -113,14 +113,14 @@ public class Interfaz_2 extends javax.swing.JFrame {
         GanadoresS.setForeground(new java.awt.Color(0, 0, 0));
         GanadoresS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresS.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 650, 230, 50));
+        getContentPane().add(GanadoresS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 660, 230, 50));
 
         GanadoresN.setBackground(new java.awt.Color(245, 230, 200));
         GanadoresN.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         GanadoresN.setForeground(new java.awt.Color(0, 0, 0));
         GanadoresN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresN.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 640, 230, 50));
+        getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 660, 230, 50));
 
         EstadoIA.setBackground(new java.awt.Color(255, 255, 255));
         EstadoIA.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
