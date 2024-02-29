@@ -4,7 +4,7 @@
  */
 package Personajes;
 
-import Personajes.Personaje;
+
 import Enums.Prioridad;
 import Utils.Contador;
 import operativos.pkg2.Show;
@@ -75,4 +75,10 @@ public class PersonajeJugable {
     public Personaje getPersonaje() {
         return personaje;
     }
+
+    public String getId() {
+        return id;
+    }
+    
+    
 }
