@@ -5,6 +5,8 @@
 package Interfaces;
 
 import EDD.Cola;
+import EDD.ColaWithListener;
+import Personajes.PersonajeJugable;
 import javax.swing.JLabel;
 
 /**
@@ -13,23 +15,34 @@ import javax.swing.JLabel;
  */
 public class ColaInterfaz extends javax.swing.JPanel {
 
-    private Cola cola;
+    private final ColaWithListener colaWithListener;
 
     /**
      * Creates new form NewJPanel
      */
-    public ColaInterfaz(Cola cola, String nombre) {
-        this.cola = cola;
+    public ColaInterfaz(ColaWithListener cola, String nombre) {
         initComponents();
+
         this.getTitulo().setText(nombre);
+
+        var listener = new ColaWithListener.ColaListener() {
+            @Override
+            public void onChange(Cola cola) {
+                System.out.println(nombre + "  " + cola.StringInterfaz());
+                CambiarColaInterfaz(cola);
+            }
+        };
+        this.colaWithListener = cola;
+        cola.setColaListener(listener);
     }
-    
-     public ColaInterfaz() {
-        this.cola = new Cola();
+
+    public ColaInterfaz() {
         initComponents();
+
+        this.colaWithListener = new ColaWithListener<PersonajeJugable>();
         this.getTitulo().setText("");
     }
-     
+
     public JLabel getContenidoCola() {
         return ContenidoCola;
     }
@@ -38,8 +51,8 @@ public class ColaInterfaz extends javax.swing.JPanel {
         return Titulo;
     }
 
-    public void CambiarColaInterfaz() {
-        this.ContenidoCola.setText(this.cola.StringInterfaz());
+    public void CambiarColaInterfaz(Cola cola) {
+        this.ContenidoCola.setText(cola.StringInterfaz());
     }
 
     /**
