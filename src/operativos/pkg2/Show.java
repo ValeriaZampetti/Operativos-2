@@ -18,7 +18,7 @@ public class Show {
 
     public Personaje personajes[];
     private final Colas_Show cola_Show;
-    private Contador contador;
+    private final Contador contador;
 
     public final String id; //Debería verse como AVATAR
 
@@ -27,6 +27,11 @@ public class Show {
         this.cola_Show = new Colas_Show();
 
         this.id = id;
+        this.contador = new Contador();
+        
+        for (Personaje personaje : personajes) {
+            crear_Personaje(personaje);
+        }
     }
 
     public PersonajeJugable escoger_Personaje_Pelear() {
@@ -51,6 +56,14 @@ public class Show {
 
     public void crear_Personaje() {
         var personaje = escoger_Personaje_Aleatorio();
+        var id = crear_PersonajeId();
+
+        var persona_Jugable = new PersonajeJugable(personaje, id);
+
+        cola_Show.agregar_Personaje(persona_Jugable);
+    }
+    
+     public void crear_Personaje( Personaje personaje) {
         var id = crear_PersonajeId();
 
         var persona_Jugable = new PersonajeJugable(personaje, id);
