@@ -26,7 +26,7 @@ public final class Administrador {
 
     private PersonajeJugable[] ganadores;
 
-    public Administrador(Show show1, Show show2) {
+    private Administrador(Show show1, Show show2) {
         this.show1 = show1;
         this.show2 = show2;
         this.IA = Inteligencia_Artificial.getInstance();
@@ -69,6 +69,8 @@ public final class Administrador {
             PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
         var colas_Show_1 = show1.getCola_Show();
         var colas_Show_2 = show2.getCola_Show();
+        
+        System.out.println(data_Pelea.getResultado().toString());
         if (data_Pelea.getResultado() != Resultado_Pelea.VICTORIA) {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show1);
             colas_Show_2.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show2);
@@ -76,6 +78,7 @@ public final class Administrador {
         }
 
         var ganador = data_Pelea.getGanador();
+        System.out.println("Gana " + ganador.toString());
 
         if (ganador.pertenece_A_Show(show1)) {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());

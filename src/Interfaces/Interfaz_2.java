@@ -45,11 +45,11 @@ public class Interfaz_2 extends javax.swing.JFrame {
 
         this.show_SM = new Show("SM", personajes_SM);
 
-        this.administrador = new Administrador(show_SM, show_SM);
+        this.administrador =  Administrador.getInstance(show_SM, show_SM);
 
         initComponents();
 
-        empezerPelea();
+        empezarPelea();
 
         this.getGanadoresS()
                 .setBackground(new Color(246, 189, 255));
@@ -179,10 +179,11 @@ public class Interfaz_2 extends javax.swing.JFrame {
         });
     }
 
-    public void empezerPelea() {
+    public void empezarPelea() {
         var personaje_ShowSM = show_SM.escoger_Personaje_Pelear();
         var personaje_ShowAVATAR = show_AVATAR.escoger_Personaje_Pelear();
         
+        System.out.println("PELEAN " + personaje_ShowSM.toString() + " VS " + personaje_ShowAVATAR.toString());
 //        TODO - ACtualizar interfaz de pelea
 //        Personaje_AVATAR;
 //        Personaje_SM;
