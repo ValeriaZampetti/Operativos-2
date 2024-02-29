@@ -15,23 +15,23 @@ import operativos.pkg2.Administrador;
  */
 public class Colas_Show {
 
-    public final Cola<PersonajeJugable> cola_Alta;
-    public final Cola<PersonajeJugable> cola_Media;
-    public final Cola<PersonajeJugable> cola_Baja;
+    public final ColaWithListener<PersonajeJugable> cola_Alta;
+    public final ColaWithListener<PersonajeJugable> cola_Media;
+    public final ColaWithListener<PersonajeJugable> cola_Baja;
 
-    public final Cola<PersonajeJugable> cola_Refuerzo;
+    public final ColaWithListener<PersonajeJugable> cola_Refuerzo;
 
     public Colas_Show() {
-        this.cola_Alta = new Cola();
-        this.cola_Media = new Cola();
-        this.cola_Baja = new Cola();
-        this.cola_Refuerzo = new Cola();
+        this.cola_Alta = new ColaWithListener();
+        this.cola_Media = new ColaWithListener();
+        this.cola_Baja = new ColaWithListener();
+        this.cola_Refuerzo = new ColaWithListener();
     }
 
     public PersonajeJugable escojerPersonaje() {
-        if (!cola_Alta.EsVacio()) {
+        if (!cola_Alta.cola.EsVacio()) {
             return cola_Alta.Desencolar();
-        } else if (!cola_Media.EsVacio()) {
+        } else if (!cola_Media.cola.EsVacio()) {
             return cola_Media.Desencolar();
         }
         return cola_Baja.Desencolar();
@@ -64,6 +64,9 @@ public class Colas_Show {
     }
 
     private void actualizar_ColaRefuerzo() {
+        if (cola_Refuerzo.cola.EsVacio()) {
+            return;
+        }
         var personaje_refuerzo = cola_Refuerzo.Desencolar();
         if (Funciones.try_Probability(40)) {
             cola_Alta.Encolar(personaje_refuerzo);
@@ -86,9 +89,9 @@ public class Colas_Show {
     }
 
     public void incrementarContadores_Jugadores() {
-        incrementarContadores_PorCola(cola_Alta);
-        incrementarContadores_PorCola(cola_Media);
-        incrementarContadores_PorCola(cola_Baja);
+        incrementarContadores_PorCola(cola_Alta.cola);
+        incrementarContadores_PorCola(cola_Media.cola);
+        incrementarContadores_PorCola(cola_Baja.cola);
 
     }
 
