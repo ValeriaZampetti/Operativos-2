@@ -92,8 +92,6 @@ public class Interfaz_2 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         GanadoresS = new javax.swing.JLabel();
         GanadoresN = new javax.swing.JLabel();
-        Personaje_AVATAR = new Interfaces.PersonajeInterfaz();
-        Personaje_SM = new Interfaces.PersonajeInterfaz();
         EstadoIA = new javax.swing.JLabel();
         colas_AVATAR = new Interfaces.Colas_ShowInterfaz(
             this.show_AVATAR.getCola_Show()
@@ -101,7 +99,10 @@ public class Interfaz_2 extends javax.swing.JFrame {
         colas_SM = new Interfaces.Colas_ShowInterfaz(
             this.show_SM.getCola_Show()
         );
+        personajeInterfaz1 = new Interfaces.PersonajeInterfaz();
+        personajeInterfaz2 = new Interfaces.PersonajeInterfaz();
         jLabel1 = new javax.swing.JLabel();
+        personajeInterfaz3 = new Interfaces.PersonajeInterfaz();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
@@ -112,28 +113,29 @@ public class Interfaz_2 extends javax.swing.JFrame {
         GanadoresS.setForeground(new java.awt.Color(0, 0, 0));
         GanadoresS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresS.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 570, 230, 50));
+        getContentPane().add(GanadoresS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 650, 230, 50));
 
         GanadoresN.setBackground(new java.awt.Color(245, 230, 200));
         GanadoresN.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         GanadoresN.setForeground(new java.awt.Color(0, 0, 0));
         GanadoresN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresN.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 230, 50));
-        getContentPane().add(Personaje_AVATAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 320, 660));
-        getContentPane().add(Personaje_SM, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 360, 660));
+        getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 640, 230, 50));
 
         EstadoIA.setBackground(new java.awt.Color(255, 255, 255));
         EstadoIA.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         EstadoIA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EstadoIA.setText("Estado de la IA");
-        getContentPane().add(EstadoIA, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 480, -1));
+        getContentPane().add(EstadoIA, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 480, -1));
         getContentPane().add(colas_AVATAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 800));
-        getContentPane().add(colas_SM, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 0, 640, 800));
+        getContentPane().add(colas_SM, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 0, -1, 800));
+        getContentPane().add(personajeInterfaz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 530, 740));
+        getContentPane().add(personajeInterfaz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, 670, 750));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pexels-codioful-(formerly-gradienta)-6985136.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-720, -150, -1, -1));
+        getContentPane().add(personajeInterfaz3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -185,6 +187,8 @@ public class Interfaz_2 extends javax.swing.JFrame {
         var personaje_ShowSM = show_SM.escoger_Personaje_Pelear();
         var personaje_ShowAVATAR = show_AVATAR.escoger_Personaje_Pelear();
         
+        
+        
 //        TODO - ACtualizar interfaz de pelea
 //        Personaje_AVATAR;
 //        Personaje_SM;
@@ -235,11 +239,12 @@ public class Interfaz_2 extends javax.swing.JFrame {
     private javax.swing.JLabel EstadoIA;
     private javax.swing.JLabel GanadoresN;
     private javax.swing.JLabel GanadoresS;
-    private Interfaces.PersonajeInterfaz Personaje_AVATAR;
-    private Interfaces.PersonajeInterfaz Personaje_SM;
     private Interfaces.Colas_ShowInterfaz colas_AVATAR;
     private Interfaces.Colas_ShowInterfaz colas_SM;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
+    private Interfaces.PersonajeInterfaz personajeInterfaz1;
+    private Interfaces.PersonajeInterfaz personajeInterfaz2;
+    private Interfaces.PersonajeInterfaz personajeInterfaz3;
     // End of variables declaration//GEN-END:variables
 }

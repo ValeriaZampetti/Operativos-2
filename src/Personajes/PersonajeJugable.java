@@ -4,7 +4,7 @@
  */
 package Personajes;
 
-import Personajes.Personaje;
+
 import Enums.Prioridad;
 import Utils.Contador;
 import operativos.pkg2.Show;

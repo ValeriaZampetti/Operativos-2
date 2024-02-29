@@ -4,9 +4,8 @@
  */
 package Interfaces;
 
-import CarpetaClases.Personaje;
 import java.awt.Color;
-import java.util.Random;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
@@ -17,7 +16,7 @@ import javax.swing.border.LineBorder;
  * @author valeriazampetti
  */
 public class PersonajeInterfaz extends javax.swing.JPanel {
-    int contador;
+  
     
 
     /**
