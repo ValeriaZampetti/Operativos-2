@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import Enums.Resultado_Pelea;
 import Personajes.Personaje;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -191,15 +192,15 @@ public class Interfaz_2 extends javax.swing.JFrame {
 //        TODO - ACtualizar interfaz de pelea
 //        Personaje_AVATAR;
 //        Personaje_SM;
-        administrador.empezarPelea(personaje_ShowSM, personaje_ShowAVATAR);
-
+        var resultado_Pelea = administrador.empezarPelea(personaje_ShowSM, personaje_ShowAVATAR);
+        setEstadoIA(resultado_Pelea);
     }
 
     public JLabel getEstadoIA() {
         return EstadoIA;
     }
 
-    public void setEstadoIA(String EstadoIA) {
+    public void setEstadoIA(Resultado_Pelea EstadoIA) {
         this.getEstadoIA().setText("Estado de la IA → " + EstadoIA);
         this.getEstadoIA().setOpaque(true);
         getEstadoIA().setBackground(new Color(245, 230, 200));
@@ -218,13 +219,6 @@ public class Interfaz_2 extends javax.swing.JFrame {
 //    this.getGanadoresS().setText("Peleas Ganadas: " + contador);
 //    }
 //    }
-    public PersonajeInterfaz getPersonajeN() {
-        return Personaje_AVATAR;
-    }
-
-    public PersonajeInterfaz getPersonajeS() {
-        return Personaje_SM;
-    }
 
     public JLabel getGanadoresN() {
         return GanadoresS;
