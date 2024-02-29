@@ -51,7 +51,6 @@ public final class Administrador {
     }
 
     public Data_Pelea empezarPelea(PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
-
         Data_Pelea data_Pelea = IA.procesarPersonjaes(personaje_Show1, personaje_Show2);
         this.procesarResultados(data_Pelea, personaje_Show1, personaje_Show2);
 
