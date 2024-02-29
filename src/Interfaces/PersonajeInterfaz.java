@@ -16,8 +16,7 @@ import javax.swing.border.LineBorder;
  * @author valeriazampetti
  */
 public class PersonajeInterfaz extends javax.swing.JPanel {
-     int contador;
-    Random rand;
+    
 
     /**
      * Creates new form PersonajeInterfaz
@@ -25,8 +24,7 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
     public PersonajeInterfaz() {
         initComponents();
         
-        rand = new Random();
-        this.contador = rand.nextInt(10) + 1;
+       
         this.setOpaque(true); 
         this.setBackground(new Color(246,189,255));
         this.setForeground(Color.WHITE);
