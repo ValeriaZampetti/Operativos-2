@@ -75,4 +75,10 @@ public class PersonajeJugable {
     public Personaje getPersonaje() {
         return personaje;
     }
+
+    public String getId() {
+        return id;
+    }
+    
+    
 }

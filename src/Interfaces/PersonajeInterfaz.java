@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import CarpetaClases.Personaje;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.ImageIcon;
@@ -16,6 +17,7 @@ import javax.swing.border.LineBorder;
  * @author valeriazampetti
  */
 public class PersonajeInterfaz extends javax.swing.JPanel {
+    int contador;
     
 
     /**
@@ -33,9 +35,32 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
     
     }
     
+     public void ActualizarPersonjaeInterfaz(Personajes.PersonajeJugable personaje) {
+        this.getIndicadorResultado().setEnabled(false);
+        this.ID.setText(personaje.getId());
+        this.Poder.setText(Integer.toString(personaje.getPersonaje().puntos_Fuerza));
+        this.agilidad.setText(Integer.toString(personaje.getPersonaje().puntos_Vida));
+        this.Fuerza.setText(Integer.toString(personaje.getPersonaje().puntos_Fuerza));
+        this.Agilidad.setText(Integer.toString(personaje.getPersonaje().puntos_Agilidad));
+        
+        
+        
+        
+    }
+     
+     public void CambiarIcono(Personajes.PersonajeJugable personaje) {
+       
+        this.Foto.setIcon(new ImageIcon("src\\Imagenes\\"+personaje.getPersonaje().nombre+".png"));
+       
+        
+        
+    }
+     
+    
+    
      public void CambiarIconoEsperar() {
         this.Foto.setIcon(new ImageIcon("src\\Imagenes\\VAyR.gif"));
-        this.Poder.setText("--");
+        this.agilidad.setText("--");
         this.ID.setText("--");
          this.IndicadorResultado.setIcon(null);
     }
@@ -87,9 +112,15 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         ID = new javax.swing.JLabel();
         Foto = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        Poder = new javax.swing.JLabel();
+        Agilidad = new javax.swing.JLabel();
+        agilidad = new javax.swing.JLabel();
         IndicadorResultado = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Poder = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Vida = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Fuerza = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(150, 77, 128));
         jPanel1.setForeground(new java.awt.Color(246, 189, 255));
@@ -107,26 +138,48 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1N.png"))); // NOI18N
         jPanel1.add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 330, 450));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel2.setText("Poder: ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        Agilidad.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Agilidad.setText("Vida:");
+        jPanel1.add(Agilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, -1));
 
-        Poder.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        Poder.setText("---");
-        jPanel1.add(Poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+        agilidad.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        agilidad.setText("---");
+        jPanel1.add(agilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
 
         IndicadorResultado.setDisplayedMnemonic('n');
         IndicadorResultado.setForeground(new java.awt.Color(255, 255, 255));
         IndicadorResultado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelea.png"))); // NOI18N
         jPanel1.add(IndicadorResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, 220, 80));
 
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel3.setText("Poder: ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        Poder.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Poder.setText("---");
+        jPanel1.add(Poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel4.setText("Vida:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
+
+        Vida.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Vida.setText("---");
+        jPanel1.add(Vida, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel5.setText("Fuerza");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, -1, -1));
+
+        Fuerza.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Fuerza.setText("---");
+        jPanel1.add(Fuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,12 +191,18 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Agilidad;
     private javax.swing.JLabel Foto;
+    private javax.swing.JLabel Fuerza;
     private javax.swing.JLabel ID;
     private javax.swing.JLabel IndicadorResultado;
     private javax.swing.JLabel Poder;
+    private javax.swing.JLabel Vida;
+    private javax.swing.JLabel agilidad;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
