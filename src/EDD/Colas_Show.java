@@ -100,9 +100,7 @@ public class Colas_Show {
                 promocionarJugador(personaje);
             } else {
                 cola.Encolar(personaje);
-
             }
-
         }
     }
 
