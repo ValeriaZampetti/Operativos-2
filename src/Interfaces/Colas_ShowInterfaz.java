@@ -12,7 +12,7 @@ import EDD.Colas_Show;
  */
 public class Colas_ShowInterfaz extends javax.swing.JPanel {
 
-    private  Colas_Show colas_show;
+    private Colas_Show colas_show;
 
     /**
      * Creates new form Colas_ShowInterfaz
@@ -21,7 +21,8 @@ public class Colas_ShowInterfaz extends javax.swing.JPanel {
         this.colas_show = colas_show;
         initComponents();
     }
-     public Colas_ShowInterfaz() {
+
+    public Colas_ShowInterfaz() {
         this.colas_show = new Colas_Show();
         initComponents();
     }
