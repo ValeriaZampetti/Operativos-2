@@ -50,7 +50,7 @@ public final class Administrador {
         return instance;
     }
 
-    public void empezarPelea(PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
+    public Resultado_Pelea empezarPelea(PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
 
         Data_Pelea data_Pelea = IA.procesarPersonjaes(personaje_Show1, personaje_Show2);
         this.procesarResultados(data_Pelea, personaje_Show1, personaje_Show2);
@@ -63,13 +63,14 @@ public final class Administrador {
                 show2.crear_Personaje();
             }
         }
+        return data_Pelea.getResultado();
     }
 
     private void procesarResultados(Data_Pelea data_Pelea,
             PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
         var colas_Show_1 = show1.getCola_Show();
         var colas_Show_2 = show2.getCola_Show();
-        
+
         System.out.println(data_Pelea.getResultado().toString());
         if (data_Pelea.getResultado() != Resultado_Pelea.VICTORIA) {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show1);
