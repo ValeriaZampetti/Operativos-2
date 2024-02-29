@@ -192,8 +192,8 @@ public class Interfaz_2 extends javax.swing.JFrame {
 //        TODO - ACtualizar interfaz de pelea
 //        Personaje_AVATAR;
 //        Personaje_SM;
-        var resultado_Pelea = administrador.empezarPelea(personaje_ShowSM, personaje_ShowAVATAR);
-        setEstadoIA(resultado_Pelea);
+        var data_Pelea = administrador.empezarPelea(personaje_ShowSM, personaje_ShowAVATAR);
+        setEstadoIA(data_Pelea.getResultado());
     }
 
     public JLabel getEstadoIA() {

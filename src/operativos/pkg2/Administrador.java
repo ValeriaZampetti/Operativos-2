@@ -50,7 +50,7 @@ public final class Administrador {
         return instance;
     }
 
-    public Resultado_Pelea empezarPelea(PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
+    public Data_Pelea empezarPelea(PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
 
         Data_Pelea data_Pelea = IA.procesarPersonjaes(personaje_Show1, personaje_Show2);
         this.procesarResultados(data_Pelea, personaje_Show1, personaje_Show2);
@@ -63,7 +63,7 @@ public final class Administrador {
                 show2.crear_Personaje();
             }
         }
-        return data_Pelea.getResultado();
+        return data_Pelea;
     }
 
     private void procesarResultados(Data_Pelea data_Pelea,
