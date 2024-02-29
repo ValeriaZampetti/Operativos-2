@@ -48,11 +48,9 @@ public class Interfaz_2 extends javax.swing.JFrame {
 
         this.show_SM = new Show("SM", personajes_SM);
 
-        this.administrador =  Administrador.getInstance(show_SM, show_SM);
+        this.administrador = Administrador.getInstance(show_SM, show_SM);
 
         initComponents();
-
-        empezarPelea();
 
         this.getGanadoresS()
                 .setBackground(new Color(246, 189, 255));
@@ -91,23 +89,31 @@ public class Interfaz_2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
+        button_Pelea = new javax.swing.JButton();
         GanadoresS = new javax.swing.JLabel();
         GanadoresN = new javax.swing.JLabel();
-        EstadoIA = new javax.swing.JLabel();
         colas_AVATAR = new Interfaces.Colas_ShowInterfaz(
             this.show_AVATAR.getCola_Show()
         );
+        EstadoIA = new javax.swing.JLabel();
         colas_SM = new Interfaces.Colas_ShowInterfaz(
             this.show_SM.getCola_Show()
         );
         personajeInterfaz1 = new Interfaces.PersonajeInterfaz();
         personajeInterfaz2 = new Interfaces.PersonajeInterfaz();
         jLabel1 = new javax.swing.JLabel();
-        personajeInterfaz3 = new Interfaces.PersonajeInterfaz();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        button_Pelea.setText("Empezar PELEA");
+        button_Pelea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_PeleaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(button_Pelea, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 750, 230, 40));
 
         GanadoresS.setBackground(new java.awt.Color(245, 230, 200));
         GanadoresS.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -122,13 +128,13 @@ public class Interfaz_2 extends javax.swing.JFrame {
         GanadoresN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresN.setText("Peleas Ganadas: 0");
         getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 660, 230, 50));
+        getContentPane().add(colas_AVATAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 800));
 
         EstadoIA.setBackground(new java.awt.Color(255, 255, 255));
         EstadoIA.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         EstadoIA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         EstadoIA.setText("Estado de la IA");
         getContentPane().add(EstadoIA, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 480, -1));
-        getContentPane().add(colas_AVATAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 800));
         getContentPane().add(colas_SM, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 0, -1, 800));
         getContentPane().add(personajeInterfaz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 530, 740));
         getContentPane().add(personajeInterfaz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, 670, 750));
@@ -136,10 +142,21 @@ public class Interfaz_2 extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pexels-codioful-(formerly-gradienta)-6985136.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-720, -150, -1, -1));
-        getContentPane().add(personajeInterfaz3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button_PeleaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_PeleaActionPerformed
+        var personaje_ShowSM = show_SM.escoger_Personaje_Pelear();
+        var personaje_ShowAVATAR = show_AVATAR.escoger_Personaje_Pelear();
+
+        System.out.println("PELEAN " + personaje_ShowSM.toString() + " VS " + personaje_ShowAVATAR.toString());
+//        TODO - ACtualizar interfaz de pelea
+//        Personaje_AVATAR;
+//        Personaje_SM;
+        var data_Pelea = administrador.empezarPelea(personaje_ShowSM, personaje_ShowAVATAR);
+        setEstadoIA(data_Pelea.getResultado());
+    }//GEN-LAST:event_button_PeleaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,18 +201,6 @@ public class Interfaz_2 extends javax.swing.JFrame {
         });
     }
 
-    public void empezarPelea() {
-        var personaje_ShowSM = show_SM.escoger_Personaje_Pelear();
-        var personaje_ShowAVATAR = show_AVATAR.escoger_Personaje_Pelear();
-        
-        System.out.println("PELEAN " + personaje_ShowSM.toString() + " VS " + personaje_ShowAVATAR.toString());
-//        TODO - ACtualizar interfaz de pelea
-//        Personaje_AVATAR;
-//        Personaje_SM;
-        var data_Pelea = administrador.empezarPelea(personaje_ShowSM, personaje_ShowAVATAR);
-        setEstadoIA(data_Pelea.getResultado());
-    }
-
     public JLabel getEstadoIA() {
         return EstadoIA;
     }
@@ -219,7 +224,6 @@ public class Interfaz_2 extends javax.swing.JFrame {
 //    this.getGanadoresS().setText("Peleas Ganadas: " + contador);
 //    }
 //    }
-
     public JLabel getGanadoresN() {
         return GanadoresS;
     }
@@ -232,12 +236,12 @@ public class Interfaz_2 extends javax.swing.JFrame {
     private javax.swing.JLabel EstadoIA;
     private javax.swing.JLabel GanadoresN;
     private javax.swing.JLabel GanadoresS;
+    private javax.swing.JButton button_Pelea;
     private Interfaces.Colas_ShowInterfaz colas_AVATAR;
     private Interfaces.Colas_ShowInterfaz colas_SM;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private Interfaces.PersonajeInterfaz personajeInterfaz1;
     private Interfaces.PersonajeInterfaz personajeInterfaz2;
-    private Interfaces.PersonajeInterfaz personajeInterfaz3;
     // End of variables declaration//GEN-END:variables
 }
