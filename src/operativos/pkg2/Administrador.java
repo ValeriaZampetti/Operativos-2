@@ -4,6 +4,7 @@
  */
 package operativos.pkg2;
 
+import Enums.Resultado_Pelea;
 import Personajes.PersonajeJugable;
 import Utils.Contador;
 import Utils.Funciones;
@@ -49,9 +50,7 @@ public final class Administrador {
         return instance;
     }
 
-    public void empezarPelea() {
-        var personaje_Show1 = show1.escoger_Personaje_Pelear();
-        var personaje_Show2 = show2.escoger_Personaje_Pelear();
+    public void empezarPelea(PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
 
         Data_Pelea data_Pelea = IA.procesarPersonjaes(personaje_Show1, personaje_Show2);
         this.procesarResultados(data_Pelea, personaje_Show1, personaje_Show2);
@@ -68,9 +67,15 @@ public final class Administrador {
 
     private void procesarResultados(Data_Pelea data_Pelea,
             PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
-        var ganador = data_Pelea.getGanador();
         var colas_Show_1 = show1.getCola_Show();
         var colas_Show_2 = show2.getCola_Show();
+        if (data_Pelea.getResultado() != Resultado_Pelea.VICTORIA) {
+            colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show1);
+            colas_Show_2.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show2);
+            return;
+        }
+
+        var ganador = data_Pelea.getGanador();
 
         if (ganador.pertenece_A_Show(show1)) {
             colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
