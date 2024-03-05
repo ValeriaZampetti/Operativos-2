@@ -20,7 +20,7 @@ public class ColaInterfaz extends javax.swing.JPanel {
     /**
      * Creates new form NewJPanel
      */
-    public ColaInterfaz(ColaWithListener cola, String nombre) {
+    public ColaInterfaz(ColaWithListener colaWithLisnter, String nombre) {
         initComponents();
 
         this.getTitulo().setText(nombre);
@@ -28,12 +28,12 @@ public class ColaInterfaz extends javax.swing.JPanel {
         var listener = new ColaWithListener.ColaListener() {
             @Override
             public void onChange(Cola cola) {
-                System.out.println(nombre + "  " + cola.StringInterfaz());
                 CambiarColaInterfaz(cola);
             }
         };
-        this.colaWithListener = cola;
-        cola.setColaListener(listener);
+        this.colaWithListener = colaWithLisnter;
+        colaWithLisnter.setColaListener(listener);
+        CambiarColaInterfaz(colaWithLisnter.cola);
     }
 
     public ColaInterfaz() {
@@ -43,16 +43,13 @@ public class ColaInterfaz extends javax.swing.JPanel {
         this.getTitulo().setText("");
     }
 
-    public JLabel getContenidoCola() {
-        return ContenidoCola;
-    }
-
     public JLabel getTitulo() {
         return Titulo;
     }
 
     public void CambiarColaInterfaz(Cola cola) {
-        this.ContenidoCola.setText(cola.StringInterfaz());
+        Contenido.setText(cola.StringInterfaz());
+        System.out.println(Titulo.getText() + "  " + Contenido.getText());
     }
 
     /**
@@ -66,10 +63,9 @@ public class ColaInterfaz extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         Titulo = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ContenidoCola = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        Contenido = new javax.swing.JTextArea();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -82,27 +78,25 @@ public class ColaInterfaz extends javax.swing.JPanel {
         Titulo.setText("Nombre de la Cola");
         jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
-        ContenidoCola.setText("---");
-        jScrollPane1.setViewportView(ContenidoCola);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 500, 300));
-
         jLabel2.setText("Fin");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
         jLabel3.setText("Inicio");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
+        Contenido.setColumns(20);
+        Contenido.setRows(5);
+        jPanel1.add(Contenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 500, 310));
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 355));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ContenidoCola;
+    private javax.swing.JTextArea Contenido;
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
