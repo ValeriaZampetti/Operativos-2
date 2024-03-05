@@ -16,77 +16,64 @@ import javax.swing.border.LineBorder;
  * @author valeriazampetti
  */
 public class PersonajeInterfaz extends javax.swing.JPanel {
-  
-    
 
     /**
      * Creates new form PersonajeInterfaz
      */
     public PersonajeInterfaz() {
         initComponents();
-        
-       
-        this.setOpaque(true); 
-        this.setBackground(new Color(246,189,255));
+
+        this.setOpaque(true);
+        this.setBackground(new Color(246, 189, 255));
         this.setForeground(Color.WHITE);
-        Border border = new LineBorder(new Color(246,189,255), 2); 
+        Border border = new LineBorder(new Color(246, 189, 255), 2);
         this.setBorder(border);
-    
+//        this.CambiarIcono(personaje);
+
     }
-    
-     public void ActualizarPersonjaeInterfaz(Personajes.PersonajeJugable personaje) {
+
+    public void ActualizarPersonjaeInterfaz(Personajes.PersonajeJugable personaje) {
         this.getIndicadorResultado().setEnabled(false);
         this.ID.setText(personaje.getId());
-        this.Poder.setText(Integer.toString(personaje.getPersonaje().puntos_Fuerza));
+        this.Poder.setText(Integer.toString(personaje.getPersonaje().puntos_Habilidades));
         this.agilidad.setText(Integer.toString(personaje.getPersonaje().puntos_Vida));
         this.Fuerza.setText(Integer.toString(personaje.getPersonaje().puntos_Fuerza));
         this.Agilidad.setText(Integer.toString(personaje.getPersonaje().puntos_Agilidad));
-        
-        
-        
-        
     }
-     
-     public void CambiarIcono(Personajes.PersonajeJugable personaje) {
-       
-        this.Foto.setIcon(new ImageIcon("src\\Imagenes\\"+personaje.getPersonaje().nombre+".png"));
-       
-        
-        
+
+    public void CambiarIcono(Personajes.Personaje personaje) {
+        this.Foto.setIcon(new ImageIcon(personaje.imagen_Path));
     }
-     
-    
-    
-     public void CambiarIconoEsperar() {
+
+    public void CambiarIconoEsperar() {
         this.Foto.setIcon(new ImageIcon("src\\Imagenes\\VAyR.gif"));
         this.agilidad.setText("--");
         this.ID.setText("--");
-         this.IndicadorResultado.setIcon(null);
+        this.IndicadorResultado.setIcon(null);
     }
-     
+
     public void CambiarIconoPelea() {
         this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\pelea.png"));
     }
-    
-        
+
     public void CambiarIconoGanador() {
-        this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\ganador.png"));  
+        this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\ganador.png"));
     }
-    
+
     public void CambiarIconoPerdedor() {
         this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\perdedor.png"));
     }
+
     public void CambiarIconoEmpate() {
         this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\empate.png"));
     }
-    
+
 //    public void ActualizarPersonjaeInterfaz(Personaje Personaje12) {
 //        this.getIndicadorResultado().setEnabled(false);
 //        this.getID().setText(Personaje12.getId());
 //        
 //    }
-    
-       public JLabel getFoto() {
+    public JLabel getFoto() {
         return Foto;
     }
 
@@ -138,12 +125,12 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         jPanel1.add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 330, 450));
 
         Agilidad.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        Agilidad.setText("Vida:");
+        Agilidad.setText("Agilidad");
         jPanel1.add(Agilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, -1));
 
         agilidad.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         agilidad.setText("---");
-        jPanel1.add(agilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
+        jPanel1.add(agilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, -1, -1));
 
         IndicadorResultado.setDisplayedMnemonic('n');
         IndicadorResultado.setForeground(new java.awt.Color(255, 255, 255));
