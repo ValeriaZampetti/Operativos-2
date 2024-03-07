@@ -109,6 +109,10 @@ public class Colas_Show {
 
     private void promocionarJugador(PersonajeJugable personaje) {
         switch (personaje.getRareza()) {
+            case ALTA -> {
+                return;
+            }
+
             case MEDIA -> {
                 cola_Alta.Encolar(personaje);
             }
