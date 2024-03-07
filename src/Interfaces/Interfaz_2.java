@@ -161,6 +161,10 @@ public class Interfaz_2 extends javax.swing.JFrame {
         GanadoresN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GanadoresN.setText("Peleas Ganadas: 0");
         getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 660, 230, 50));
+
+        Tiempo_Entre_Pelea.setPaintTrack(false);
+        Tiempo_Entre_Pelea.setSnapToTicks(true);
+        Tiempo_Entre_Pelea.setToolTipText("");
         getContentPane().add(Tiempo_Entre_Pelea, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 750, -1, -1));
         getContentPane().add(colas_AVATAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 800));
 
@@ -197,6 +201,9 @@ public class Interfaz_2 extends javax.swing.JFrame {
         System.out.println("EMPIEZO UNA NUEVA PELEA");
         var personaje_ShowSM = show_SM.escoger_Personaje_Pelear();
         var personaje_ShowAVATAR = show_AVATAR.escoger_Personaje_Pelear();
+        
+        personajeInterfaz1.ActualizarPersonajeInterfaz(personaje_ShowSM);
+        personajeInterfaz2.ActualizarPersonajeInterfaz(personaje_ShowAVATAR);
 
         System.out.println("PELEAN " + personaje_ShowSM.toString() + " VS " + personaje_ShowAVATAR.toString());
 //        TODO - ACtualizar interfaz de pelea

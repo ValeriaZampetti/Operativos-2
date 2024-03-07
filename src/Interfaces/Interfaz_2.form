@@ -73,6 +73,11 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JSlider" name="Tiempo_Entre_Pelea">
+      <Properties>
+        <Property name="paintTrack" type="boolean" value="false"/>
+        <Property name="snapToTicks" type="boolean" value="true"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSlider(1000, 10000, 3000)"/>
       </AuxValues>
