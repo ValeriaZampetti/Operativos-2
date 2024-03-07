@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import Personajes.Personaje;
+import Personajes.PersonajeJugable;
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
@@ -17,6 +19,17 @@ import javax.swing.border.LineBorder;
  */
 public class PersonajeInterfaz extends javax.swing.JPanel {
 
+    public PersonajeInterfaz(PersonajeJugable personaje) {
+        initComponents();
+
+        this.setOpaque(true);
+        this.setBackground(new Color(246, 189, 255));
+        this.setForeground(Color.WHITE);
+        Border border = new LineBorder(new Color(246, 189, 255), 2);
+        this.setBorder(border);
+        ActualizarPersonajeInterfaz(personaje);
+    }
+
     /**
      * Creates new form PersonajeInterfaz
      */
@@ -28,20 +41,19 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         this.setForeground(Color.WHITE);
         Border border = new LineBorder(new Color(246, 189, 255), 2);
         this.setBorder(border);
-//        this.CambiarIcono(personaje);
-
     }
 
-    public void ActualizarPersonjaeInterfaz(Personajes.PersonajeJugable personaje) {
+    public void ActualizarPersonajeInterfaz(PersonajeJugable personaje) {
         this.getIndicadorResultado().setEnabled(false);
         this.ID.setText(personaje.getId());
         this.Poder.setText(Integer.toString(personaje.getPersonaje().puntos_Habilidades));
         this.agilidad.setText(Integer.toString(personaje.getPersonaje().puntos_Vida));
         this.Fuerza.setText(Integer.toString(personaje.getPersonaje().puntos_Fuerza));
         this.Agilidad.setText(Integer.toString(personaje.getPersonaje().puntos_Agilidad));
+        CambiarIcono(personaje.getPersonaje());
     }
 
-    public void CambiarIcono(Personajes.Personaje personaje) {
+    public void CambiarIcono(Personaje personaje) {
         this.Foto.setIcon(new ImageIcon(personaje.imagen_Path));
     }
 
