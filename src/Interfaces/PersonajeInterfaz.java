@@ -4,13 +4,13 @@
  */
 package Interfaces;
 
+import Enums.Prioridad;
 import Enums.Resultado_Pelea;
 import Personajes.Personaje;
 import Personajes.PersonajeJugable;
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import operativos.pkg2.Data_Pelea;
@@ -49,6 +49,7 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         this.Fuerza.setText(Integer.toString(personaje.getPersonaje().puntos_Fuerza));
         this.Agilidad.setText(Integer.toString(personaje.getPersonaje().puntos_Agilidad));
 
+        this.actualizarRareza(personaje.getRareza());
         this.CambiarIconoPelea();
         CambiarIcono(personaje.getPersonaje());
     }
@@ -89,6 +90,25 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         this.nGanadas.setText(ganadasString);
     }
 
+    private void actualizarRareza(Prioridad prioridad) {
+        switch (prioridad) {
+            case ALTA -> {
+                this.Rareza.setText("Alta");
+                this.Rareza.setForeground(new Color(255, 215, 0)); // Gold color
+            }
+            case MEDIA -> {
+                this.Rareza.setText("Media");
+                this.Rareza.setForeground(new Color(192, 192, 192)); // Silver color
+            }
+            case BAJA -> {
+                this.Rareza.setText("Baja");
+                this.Rareza.setForeground(new Color(184, 115, 51)); // Brown (copper) color
+            }
+            default ->
+                throw new AssertionError();
+        }
+    }
+
     private int getGanadasValue() {
         String numText = this.nGanadas.getText();
         return Integer.parseInt(numText);
@@ -118,7 +138,7 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
     public void CambiarIconoEmpate() {
         this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\empate.png"));
     }
-    
+
 //    TODO - Hacer uno para incapaz
     public void CambiarIconoIncapaz() {
         this.IndicadorResultado.setIcon(new ImageIcon("src\\Imagenes\\empate.png"));
@@ -163,12 +183,14 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         IndicadorResultado = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Poder = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        Rareza = new javax.swing.JLabel();
         Vida = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Fuerza = new javax.swing.JLabel();
         labelAgilidad = new javax.swing.JLabel();
         Agilidad = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(150, 77, 128));
         setForeground(new java.awt.Color(246, 189, 255));
@@ -184,7 +206,7 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
 
         Foto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/1N.png"))); // NOI18N
-        add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 330, 450));
+        add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 330, 450));
 
         ganadoresLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         ganadoresLabel.setText("Ganadas");
@@ -197,39 +219,47 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
         IndicadorResultado.setDisplayedMnemonic('n');
         IndicadorResultado.setForeground(new java.awt.Color(255, 255, 255));
         IndicadorResultado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelea.png"))); // NOI18N
-        add(IndicadorResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 220, 80));
+        add(IndicadorResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, 140, 40));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel3.setText("Poder: ");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         Poder.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         Poder.setText("---");
-        add(Poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+        add(Poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel4.setText("Vida:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
+        Rareza.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Rareza.setText("---");
+        add(Rareza, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 590, -1, -1));
 
         Vida.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         Vida.setText("---");
         add(Vida, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel5.setText("Fuerza");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, -1, -1));
+        jLabel5.setText("Fuerza:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, -1, -1));
 
         Fuerza.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         Fuerza.setText("---");
-        add(Fuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 560, -1, -1));
+        add(Fuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, -1));
 
         labelAgilidad.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        labelAgilidad.setText("Agilidad");
-        add(labelAgilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, -1));
+        labelAgilidad.setText("Agilidad:");
+        add(labelAgilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         Agilidad.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         Agilidad.setText("---");
-        add(Agilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, -1, -1));
+        add(Agilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel6.setText("Vida:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel7.setText("Rareza:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 590, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -240,12 +270,14 @@ public class PersonajeInterfaz extends javax.swing.JPanel {
     private javax.swing.JLabel ID;
     private javax.swing.JLabel IndicadorResultado;
     private javax.swing.JLabel Poder;
+    private javax.swing.JLabel Rareza;
     private javax.swing.JLabel Vida;
     private javax.swing.JLabel ganadoresLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel labelAgilidad;
     private javax.swing.JLabel nGanadas;
     // End of variables declaration//GEN-END:variables
