@@ -37,25 +37,21 @@ public class Interfaz_2 extends javax.swing.JFrame {
             new Personaje("Rigby", 70, 10, 20, 80),
             new Personaje("Musculoso", 30, 70, 70, 30),
             new Personaje("Fantasmano", 80, 10, 10, 90),
-            new Personaje("Benson", 40, 40, 40, 30),
-            
-              new Personaje("Mordecai", 50, 30, 40, 60),
-            new Personaje("Rigby", 70, 10, 20, 80),
-            new Personaje("Musculoso", 30, 70, 70, 30),
-            new Personaje("Fantasmano", 80, 10, 10, 90),
-            new Personaje("Benson", 40, 40, 40, 30),
-              new Personaje("Mordecai", 50, 30, 40, 60),
-            new Personaje("Rigby", 70, 10, 20, 80),
-            new Personaje("Musculoso", 30, 70, 70, 30),
-            new Personaje("Fantasmano", 80, 10, 10, 90),
-            new Personaje("Benson", 40, 40, 40, 30),
-              new Personaje("Mordecai", 50, 30, 40, 60),
-            new Personaje("Rigby", 70, 10, 20, 80),
-            new Personaje("Musculoso", 30, 70, 70, 30),
-            new Personaje("Fantasmano", 80, 10, 10, 90),
-            new Personaje("Benson", 40, 40, 40, 30),
-            
-        
+            new Personaje("Benson", 40, 40, 40, 30), //              new Personaje("Mordecai", 50, 30, 40, 60),
+        //            new Personaje("Rigby", 70, 10, 20, 80),
+        //            new Personaje("Musculoso", 30, 70, 70, 30),
+        //            new Personaje("Fantasmano", 80, 10, 10, 90),
+        //            new Personaje("Benson", 40, 40, 40, 30),
+        //              new Personaje("Mordecai", 50, 30, 40, 60),
+        //            new Personaje("Rigby", 70, 10, 20, 80),
+        //            new Personaje("Musculoso", 30, 70, 70, 30),
+        //            new Personaje("Fantasmano", 80, 10, 10, 90),
+        //            new Personaje("Benson", 40, 40, 40, 30),
+        //              new Personaje("Mordecai", 50, 30, 40, 60),
+        //            new Personaje("Rigby", 70, 10, 20, 80),
+        //            new Personaje("Musculoso", 30, 70, 70, 30),
+        //            new Personaje("Fantasmano", 80, 10, 10, 90),
+        //            new Personaje("Benson", 40, 40, 40, 30),
         };
 
         var personajes_AVATAR = new Personaje[]{
@@ -63,58 +59,30 @@ public class Interfaz_2 extends javax.swing.JFrame {
             new Personaje("Azula", 50, 40, 50, 70),
             new Personaje("Sokka", 70, 50, 10, 70),
             new Personaje("Toph", 70, 70, 70, 20),
-            new Personaje("Zuko", 60, 40, 40, 70),
-            
-             new Personaje("Aang", 60, 30, 40, 70),
-            new Personaje("Azula", 50, 40, 50, 70),
-            new Personaje("Sokka", 70, 50, 10, 70),
-            new Personaje("Toph", 70, 70, 70, 20),
-            new Personaje("Zuko", 60, 40, 40, 70),
-             new Personaje("Aang", 60, 30, 40, 70),
-            new Personaje("Azula", 50, 40, 50, 70),
-            new Personaje("Sokka", 70, 50, 10, 70),
-            new Personaje("Toph", 70, 70, 70, 20),
-            new Personaje("Zuko", 60, 40, 40, 70),
-             new Personaje("Aang", 60, 30, 40, 70),
-            new Personaje("Azula", 50, 40, 50, 70),
-            new Personaje("Sokka", 70, 50, 10, 70),
-            new Personaje("Toph", 70, 70, 70, 20),
-            new Personaje("Zuko", 60, 40, 40, 70),
+            new Personaje("Zuko", 60, 40, 40, 70), //             new Personaje("Aang", 60, 30, 40, 70),
+        //            new Personaje("Azula", 50, 40, 50, 70),
+        //            new Personaje("Sokka", 70, 50, 10, 70),
+        //            new Personaje("Toph", 70, 70, 70, 20),
+        //            new Personaje("Zuko", 60, 40, 40, 70),
+        //             new Personaje("Aang", 60, 30, 40, 70),
+        //            new Personaje("Azula", 50, 40, 50, 70),
+        //            new Personaje("Sokka", 70, 50, 10, 70),
+        //            new Personaje("Toph", 70, 70, 70, 20),
+        //            new Personaje("Zuko", 60, 40, 40, 70),
+        //             new Personaje("Aang", 60, 30, 40, 70),
+        //            new Personaje("Azula", 50, 40, 50, 70),
+        //            new Personaje("Sokka", 70, 50, 10, 70),
+        //            new Personaje("Toph", 70, 70, 70, 20),
+        //            new Personaje("Zuko", 60, 40, 40, 70),
         };
 
         this.show_AVATAR = new Show("AVATAR", personajes_AVATAR);
 
         this.show_SM = new Show("SM", personajes_SM);
 
-        this.administrador = Administrador.getInstance(show_SM, show_SM);
+        this.administrador = Administrador.getInstance(show_SM, show_AVATAR);
 
         initComponents();
-
-        this.getGanadoresS()
-                .setBackground(new Color(246, 189, 255));
-
-        this.getGanadoresS()
-                .setForeground(Color.BLACK);
-        Border border = new LineBorder(new Color(246, 189, 255), 2);
-
-        this.getGanadoresS()
-                .setBorder(border);
-
-        this.getGanadoresN()
-                .setBorder(border);
-
-        this.getGanadoresN()
-                .setOpaque(true);
-
-        this.getGanadoresN()
-                .setBackground(new Color(246, 189, 255));
-
-        this.getGanadoresN()
-                .setForeground(Color.BLACK);
-        Border border1 = new LineBorder(new Color(246, 189, 255), 2);
-
-        this.getGanadoresN()
-                .setBorder(border1);
         Tiempo_Entre_Pelea.addChangeListener(e -> resetTimer());
         resetTimer();
     }
@@ -129,8 +97,6 @@ public class Interfaz_2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
-        GanadoresS = new javax.swing.JLabel();
-        GanadoresN = new javax.swing.JLabel();
         Tiempo_Entre_Pelea = new javax.swing.JSlider(1000, 10000, 3000);
         colas_AVATAR = new Interfaces.Colas_ShowInterfaz(
             this.show_AVATAR.getCola_Show()
@@ -140,27 +106,13 @@ public class Interfaz_2 extends javax.swing.JFrame {
             this.show_SM.getCola_Show()
         );
         DuracionLabel = new javax.swing.JLabel();
-        personajeInterfaz1 = new Interfaces.PersonajeInterfaz();
-        personajeInterfaz2 = new Interfaces.PersonajeInterfaz();
+        personajeInterfaz_AVATAR = new Interfaces.PersonajeInterfaz();
+        personajeInterfaz_SM = new Interfaces.PersonajeInterfaz();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        GanadoresS.setBackground(new java.awt.Color(245, 230, 200));
-        GanadoresS.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        GanadoresS.setForeground(new java.awt.Color(0, 0, 0));
-        GanadoresS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        GanadoresS.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresS, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 660, 230, 50));
-
-        GanadoresN.setBackground(new java.awt.Color(245, 230, 200));
-        GanadoresN.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        GanadoresN.setForeground(new java.awt.Color(0, 0, 0));
-        GanadoresN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        GanadoresN.setText("Peleas Ganadas: 0");
-        getContentPane().add(GanadoresN, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 660, 230, 50));
 
         Tiempo_Entre_Pelea.setPaintTrack(false);
         Tiempo_Entre_Pelea.setSnapToTicks(true);
@@ -178,8 +130,8 @@ public class Interfaz_2 extends javax.swing.JFrame {
         DuracionLabel.setForeground(new java.awt.Color(0, 0, 0));
         DuracionLabel.setText("Tiempo entre peleas");
         getContentPane().add(DuracionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 750, -1, -1));
-        getContentPane().add(personajeInterfaz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 530, 740));
-        getContentPane().add(personajeInterfaz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, 670, 750));
+        getContentPane().add(personajeInterfaz_AVATAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 530, 740));
+        getContentPane().add(personajeInterfaz_SM, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, 670, 750));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pexels-codioful-(formerly-gradienta)-6985136.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -201,16 +153,15 @@ public class Interfaz_2 extends javax.swing.JFrame {
         System.out.println("EMPIEZO UNA NUEVA PELEA");
         var personaje_ShowSM = show_SM.escoger_Personaje_Pelear();
         var personaje_ShowAVATAR = show_AVATAR.escoger_Personaje_Pelear();
-        
-        personajeInterfaz1.ActualizarPersonajeInterfaz(personaje_ShowSM);
-        personajeInterfaz2.ActualizarPersonajeInterfaz(personaje_ShowAVATAR);
 
-        System.out.println("PELEAN " + personaje_ShowSM.toString() + " VS " + personaje_ShowAVATAR.toString());
-//        TODO - ACtualizar interfaz de pelea
-//        Personaje_AVATAR;
-//        Personaje_SM;
+        personajeInterfaz_AVATAR.ActualizarPersonajeInterfaz(personaje_ShowAVATAR);
+        personajeInterfaz_SM.ActualizarPersonajeInterfaz(personaje_ShowSM);
+
         var data_Pelea = administrador.empezarPelea(personaje_ShowSM, personaje_ShowAVATAR);
         setEstadoIA(data_Pelea.getResultado());
+
+        personajeInterfaz_AVATAR.actualizarEstado(data_Pelea);
+        personajeInterfaz_SM.actualizarEstado(data_Pelea);
     }
 
     /**
@@ -270,34 +221,16 @@ public class Interfaz_2 extends javax.swing.JFrame {
 
     }
 
-//    public void ActualizarGanadores(Personaje Person, int contador){
-//    char primerCaracter = Person.getEmpresa().charAt(0);
-//    if(primerCaracter=='N'){
-//    this.getGanadoresN().setText("Peleas Ganadas: " + contador);
-//   
-//    } else{
-//    this.getGanadoresS().setText("Peleas Ganadas: " + contador);
-//    }
-//    }
-    public JLabel getGanadoresN() {
-        return GanadoresS;
-    }
-
-    public final JLabel getGanadoresS() {
-        return GanadoresS;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DuracionLabel;
     private javax.swing.JLabel EstadoIA;
-    private javax.swing.JLabel GanadoresN;
-    private javax.swing.JLabel GanadoresS;
     private javax.swing.JSlider Tiempo_Entre_Pelea;
     private Interfaces.Colas_ShowInterfaz colas_AVATAR;
     private Interfaces.Colas_ShowInterfaz colas_SM;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
-    private Interfaces.PersonajeInterfaz personajeInterfaz1;
-    private Interfaces.PersonajeInterfaz personajeInterfaz2;
+    private Interfaces.PersonajeInterfaz personajeInterfaz_AVATAR;
+    private Interfaces.PersonajeInterfaz personajeInterfaz_SM;
     // End of variables declaration//GEN-END:variables
 }
