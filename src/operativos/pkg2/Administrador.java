@@ -15,8 +15,8 @@ import Utils.Funciones;
  */
 public final class Administrador {
 
-    private Show show1;
-    private Show show2;
+    private Show show_SM;
+    private Show show_AVATAR;
 
     private Contador contador;
 
@@ -27,8 +27,8 @@ public final class Administrador {
     private PersonajeJugable[] ganadores;
 
     private Administrador(Show show1, Show show2) {
-        this.show1 = show1;
-        this.show2 = show2;
+        this.show_SM = show1;
+        this.show_AVATAR = show2;
         this.IA = Inteligencia_Artificial.getInstance();
 
         this.ganadores = new PersonajeJugable[0];
@@ -50,46 +50,51 @@ public final class Administrador {
         return instance;
     }
 
-    public Data_Pelea empezarPelea(PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
-        Data_Pelea data_Pelea = IA.procesarPersonjaes(personaje_Show1, personaje_Show2);
-        this.procesarResultados(data_Pelea, personaje_Show1, personaje_Show2);
+    public Data_Pelea empezarPelea(PersonajeJugable personaje_ShowSM, PersonajeJugable personaje_ShowAVATAR) {
+        Data_Pelea data_Pelea = IA.procesarPersonjaes(personaje_ShowSM, personaje_ShowAVATAR);
+        this.procesarResultados(data_Pelea, personaje_ShowSM, personaje_ShowAVATAR);
 
         if (contador.incrementarContador()) {
             var debeAgregar = Funciones.try_Probability(80);
 
             if (debeAgregar) {
-                show1.crear_Personaje();
-                show2.crear_Personaje();
+                System.out.println("Creo personajes");
+                show_SM.crear_Personaje();
+                show_AVATAR.crear_Personaje();
             }
         }
         return data_Pelea;
     }
 
     private void procesarResultados(Data_Pelea data_Pelea,
-            PersonajeJugable personaje_Show1, PersonajeJugable personaje_Show2) {
-        var colas_Show_1 = show1.getCola_Show();
-        var colas_Show_2 = show2.getCola_Show();
+            PersonajeJugable personaje_ShowSM, PersonajeJugable personaje_ShowAVATAR) {
+        var colas_Show_SM = show_SM.getCola_Show();
+        var colas_Show_AVATAR = show_AVATAR.getCola_Show();
 
         System.out.println(data_Pelea.getResultado().toString());
         if (data_Pelea.getResultado() != Resultado_Pelea.VICTORIA) {
-            colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show1);
-            colas_Show_2.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show2);
+            if (personaje_ShowSM == null && personaje_ShowAVATAR == null) {
+                return;
+            }
+
+            colas_Show_SM.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_ShowSM);
+            colas_Show_AVATAR.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_ShowAVATAR);
             return;
         }
 
         var ganador = data_Pelea.getGanador();
         System.out.println("Gana " + ganador.toString());
 
-        if (ganador.pertenece_A_Show(show1)) {
-            colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
-            colas_Show_2.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show2);
+        if (ganador.pertenece_A_Show(show_SM)) {
+            colas_Show_SM.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
+            colas_Show_AVATAR.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_ShowAVATAR);
         } else {
-            colas_Show_1.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_Show1);
-            colas_Show_2.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
+            colas_Show_SM.decidir_Accion_Pelea(data_Pelea.getResultado(), personaje_ShowSM);
+            colas_Show_AVATAR.decidir_Accion_Pelea(data_Pelea.getResultado(), data_Pelea.getGanador());
         }
 
-        colas_Show_1.incrementarContadores_Jugadores();
-        colas_Show_2.incrementarContadores_Jugadores();
+        colas_Show_SM.incrementarContadores_Jugadores();
+        colas_Show_AVATAR.incrementarContadores_Jugadores();
     }
 
     public void agregarGanador(PersonajeJugable personaje) {
