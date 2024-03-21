@@ -76,7 +76,7 @@ public class PersonajeJugable {
     }
 
     private void recibirDano(int dano) {
-        int objetivoEsquiva = this.puntos_Agilidad.valor / 4;
+        int objetivoEsquiva = this.puntos_Agilidad.valor / 6;
         int danoRecibido = dano;
 
         if (Funciones.try_Probability(objetivoEsquiva)) {
