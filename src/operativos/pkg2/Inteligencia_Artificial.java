@@ -55,12 +55,14 @@ public final class Inteligencia_Artificial {
     public PersonajeJugable escogerGanador(PersonajeJugable personaje1, PersonajeJugable personaje2) {
         var turnoPersonaje1 = Funciones.try_Probability(50);
 
-        while (personaje1.puntos_Vida.valor >= 0
-                && personaje2.puntos_Vida.valor >= 0) {
+        while (personaje1.puntos_Vida.valor > 0
+                && personaje2.puntos_Vida.valor > 0) {
             if (turnoPersonaje1) {
                 personaje1.atacar_Personaje(personaje2);
+                turnoPersonaje1 = false;
             } else {
                 personaje2.atacar_Personaje(personaje1);
+                turnoPersonaje1 = true;
             }
         }
 
