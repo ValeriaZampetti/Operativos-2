@@ -12,17 +12,14 @@ import Utils.Funciones;
  */
 public class PuntosPersonajes {
 
-    private int habilidad_Valor;
+    public int valor;
     private boolean calidad;
 
     public PuntosPersonajes(int habilidad_Valor, int probabilidad) {
-        this.habilidad_Valor = habilidad_Valor;
+        this.valor = habilidad_Valor;
         this.calidad = Funciones.try_Probability(probabilidad);
     }
 
-    public int getHabilidad_Valor() {
-        return habilidad_Valor;
-    }
 
     public boolean esCalidad() {
         return calidad;

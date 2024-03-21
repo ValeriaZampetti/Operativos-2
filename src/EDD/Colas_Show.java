@@ -55,6 +55,10 @@ public class Colas_Show {
             }
 
             case INCAPAZ -> {
+                if (personaje == null) {
+                    System.out.println("Es incapaz y personaje null, se debe terminar la simulación");
+                    return;
+                }
                 cola_Refuerzo.Encolar(personaje);
             }
 
@@ -109,6 +113,10 @@ public class Colas_Show {
 
     private void promocionarJugador(PersonajeJugable personaje) {
         switch (personaje.getRareza()) {
+            case ALTA -> {
+                return;
+            }
+
             case MEDIA -> {
                 cola_Alta.Encolar(personaje);
             }

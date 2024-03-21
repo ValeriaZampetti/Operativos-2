@@ -4,9 +4,9 @@
  */
 package Personajes;
 
-
 import Enums.Prioridad;
 import Utils.Contador;
+import Utils.Funciones;
 import operativos.pkg2.Show;
 
 /**
@@ -15,10 +15,10 @@ import operativos.pkg2.Show;
  */
 public class PersonajeJugable {
 
-    private final PuntosPersonajes puntos_Habilidades;
-    private final PuntosPersonajes puntos_Vida;
-    private final PuntosPersonajes puntos_Fuerza;
-    private final PuntosPersonajes puntos_Agilidad;
+    public final PuntosPersonajes puntos_Habilidades;
+    public final PuntosPersonajes puntos_Vida;
+    public final PuntosPersonajes puntos_Fuerza;
+    public final PuntosPersonajes puntos_Agilidad;
 
     private final String id; //Deberia ser algo como AVATAR-2
     public Contador contador;
@@ -60,12 +60,30 @@ public class PersonajeJugable {
     public String toString() {
         return "PersonajeJugable{" + "id=" + id + '}';
     }
-    
+
     public boolean pertenece_A_Show(Show show) {
         var idParts = this.id.split("-");
         var showIdPart = idParts[0];
 
         return showIdPart == id;
+    }
+
+    public void atacar_Personaje(PersonajeJugable personajeObjetivo) {
+        int dano = (this.puntos_Fuerza.valor
+                + personajeObjetivo.puntos_Habilidades.valor) / 2;
+
+        personajeObjetivo.recibirDano(dano);
+    }
+
+    private void recibirDano(int dano) {
+        int objetivoEsquiva = this.puntos_Agilidad.valor / 4;
+        int danoRecibido = dano;
+
+        if (Funciones.try_Probability(objetivoEsquiva)) {
+            danoRecibido /= 2;
+        }
+
+        this.puntos_Vida.valor = Integer.max(puntos_Vida.valor - danoRecibido, 0);
     }
 
     public Prioridad getRareza() {
@@ -79,6 +97,5 @@ public class PersonajeJugable {
     public String getId() {
         return id;
     }
-    
-    
+
 }

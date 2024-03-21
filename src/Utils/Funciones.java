@@ -33,6 +33,10 @@ public class Funciones {
                 return i;
             }
         }
+
+        if (sum == 100) {
+            return probabilities.length - 1;
+        }
         throw new IllegalArgumentException("Probabilities do not sum to 100");
     }
 
