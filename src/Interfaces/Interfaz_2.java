@@ -59,22 +59,20 @@ public class Interfaz_2 extends javax.swing.JFrame {
             new Personaje("Azula", 50, 40, 50, 70),
             new Personaje("Sokka", 70, 50, 10, 70),
             new Personaje("Toph", 70, 70, 70, 20),
-            new Personaje("Zuko", 60, 40, 40, 70), //             new Personaje("Aang", 60, 30, 40, 70),
-        //            new Personaje("Azula", 50, 40, 50, 70),
-        //            new Personaje("Sokka", 70, 50, 10, 70),
-        //            new Personaje("Toph", 70, 70, 70, 20),
-        //            new Personaje("Zuko", 60, 40, 40, 70),
-        //             new Personaje("Aang", 60, 30, 40, 70),
-        //            new Personaje("Azula", 50, 40, 50, 70),
-        //            new Personaje("Sokka", 70, 50, 10, 70),
-        //            new Personaje("Toph", 70, 70, 70, 20),
-        //            new Personaje("Zuko", 60, 40, 40, 70),
-        //             new Personaje("Aang", 60, 30, 40, 70),
-        //            new Personaje("Azula", 50, 40, 50, 70),
-        //            new Personaje("Sokka", 70, 50, 10, 70),
-        //            new Personaje("Toph", 70, 70, 70, 20),
-        //            new Personaje("Zuko", 60, 40, 40, 70),
-        };
+            new Personaje("Zuko", 60, 40, 40, 70),
+            //            
+            new Personaje("Appa", 50, 40, 50, 70),
+            new Personaje("Hadoka", 70, 50, 10, 70),
+            new Personaje("Hama", 70, 70, 70, 20),
+            new Personaje("Jet", 60, 40, 40, 70),
+            new Personaje("Long Feng", 60, 30, 40, 70),
+            new Personaje("Ozai", 50, 40, 50, 70),
+            new Personaje("Roku", 70, 50, 10, 70),
+            new Personaje("Teo", 70, 70, 70, 20),
+            new Personaje("Toph", 60, 40, 40, 70),
+            new Personaje("Ty Lee", 60, 30, 40, 70),
+            new Personaje("Xin Fu", 50, 40, 50, 70),
+            new Personaje("Zhao", 70, 50, 10, 70),};
 
         this.show_AVATAR = new Show("AVATAR", personajes_AVATAR);
 
